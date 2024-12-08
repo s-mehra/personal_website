@@ -139,7 +139,7 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  if (screenWidth < 800) // Show circle image only on smaller screens
+                                  if (screenWidth < 800)
                                     CircleAvatar(
                                       radius: 30,
                                       backgroundImage: AssetImage('assets/soham.jpg'),
@@ -156,7 +156,7 @@ class HomePage extends StatelessWidget {
                               ),
                               SizedBox(height: 20),
                               // Buttons and Icons for smaller screens
-                              if (screenWidth < 800) 
+                              if (screenWidth < 800)
                                 Column(
                                   children: [
                                     Row(
@@ -212,7 +212,7 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ],
                                 )
-                              else // Use Row for larger screens
+                              else
                                 Row(
                                   children: [
                                     MouseRegion(
@@ -248,13 +248,13 @@ class HomePage extends StatelessWidget {
                         ),
                         SizedBox(width: 20),
                         // Right side image
-                        if (constraints.maxWidth > 800) // Show image only on larger screens
+                        if (constraints.maxWidth > 800)
                           Expanded(
                             flex: 2,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(16),
                               child: Container(
-                                height: 400,  // Adjusted height
+                                height: 400,
                                 decoration: BoxDecoration(
                                   boxShadow: [
                                     BoxShadow(
