@@ -155,34 +155,60 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 20),
-                              if (screenWidth < 800) // Use Column for smaller screens
+                              // Buttons and Icons for smaller screens
+                              if (screenWidth < 800) 
                                 Column(
                                   children: [
-                                    MouseRegion(
-                                      cursor: SystemMouseCursors.click,
-                                      child: ElevatedButton(
-                                        onPressed: () => Navigator.pushNamed(context, '/about'),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Text("About Me"),
-                                            SizedBox(width: 8),
-                                            Icon(Icons.arrow_forward, size: 18),
-                                          ],
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        MouseRegion(
+                                          cursor: SystemMouseCursors.click,
+                                          child: ElevatedButton(
+                                            onPressed: () => Navigator.pushNamed(context, '/about'),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Text("About Me"),
+                                                SizedBox(width: 8),
+                                                Icon(Icons.arrow_forward, size: 18),
+                                              ],
+                                            ),
+                                          ),
                                         ),
-                                      ),
+                                        SizedBox(width: 20),
+                                        MouseRegion(
+                                          cursor: SystemMouseCursors.click,
+                                          child: TextButton(
+                                            onPressed: () => _launchURL('https://calendly.com/mehrasoham-mail'),
+                                            style: TextButton.styleFrom(
+                                              foregroundColor: Color(0xFF007AFF),
+                                              padding: EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                                            ),
+                                            child: Text("Let's Meet!"),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                     SizedBox(height: 20),
-                                    MouseRegion(
-                                      cursor: SystemMouseCursors.click,
-                                      child: TextButton(
-                                        onPressed: () => _launchURL('https://calendly.com/mehrasoham-mail'),
-                                        style: TextButton.styleFrom(
-                                          foregroundColor: Color(0xFF007AFF),
-                                          padding: EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        IconButton(
+                                          icon: Icon(FontAwesomeIcons.linkedinIn),
+                                          onPressed: () => _launchURL('https://www.linkedin.com/in/soham-mehra/'),
                                         ),
-                                        child: Text("Let's Meet!"),
-                                      ),
+                                        SizedBox(width: 20),
+                                        IconButton(
+                                          icon: Icon(FontAwesomeIcons.github),
+                                          onPressed: () => _launchURL('https://github.com/s-mehra'),
+                                        ),
+                                        SizedBox(width: 20),
+                                        IconButton(
+                                          icon: Icon(FontAwesomeIcons.envelope),
+                                          onPressed: () => _launchURL('mailto:mehrasoham.mail@gmail.com'),
+                                        ),
+                                      ],
                                     ),
                                   ],
                                 )
@@ -249,48 +275,6 @@ class HomePage extends StatelessWidget {
                     );
                   },
                 ),
-              ),
-              // Social links at the bottom
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 40),
-                child: screenWidth < 800
-                    ? Column(
-                        children: [
-                          IconButton(
-                            icon: Icon(FontAwesomeIcons.linkedinIn),
-                            onPressed: () => _launchURL('https://www.linkedin.com/in/soham-mehra/'),
-                          ),
-                          SizedBox(height: 20),
-                          IconButton(
-                            icon: Icon(FontAwesomeIcons.github),
-                            onPressed: () => _launchURL('https://github.com/s-mehra'),
-                          ),
-                          SizedBox(height: 20),
-                          IconButton(
-                            icon: Icon(FontAwesomeIcons.envelope),
-                            onPressed: () => _launchURL('mailto:mehrasoham.mail@gmail.com'),
-                          ),
-                        ],
-                      )
-                    : Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                            icon: Icon(FontAwesomeIcons.linkedinIn),
-                            onPressed: () => _launchURL('https://www.linkedin.com/in/soham-mehra/'),
-                          ),
-                          SizedBox(width: 20),
-                          IconButton(
-                            icon: Icon(FontAwesomeIcons.github),
-                            onPressed: () => _launchURL('https://github.com/s-mehra'),
-                          ),
-                          SizedBox(width: 20),
-                          IconButton(
-                            icon: Icon(FontAwesomeIcons.envelope),
-                            onPressed: () => _launchURL('mailto:mehrasoham.mail@gmail.com'),
-                          ),
-                        ],
-                      ),
               ),
             ],
           ),
