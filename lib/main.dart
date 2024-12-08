@@ -165,27 +165,39 @@ class HomePage extends StatelessWidget {
                                         MouseRegion(
                                           cursor: SystemMouseCursors.click,
                                           child: ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                              padding: MediaQuery.of(context).size.width < 800
+                                                  ? EdgeInsets.symmetric(horizontal: 12, vertical: 6)
+                                                  : EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                                              textStyle: TextStyle(
+                                                fontSize: MediaQuery.of(context).size.width < 800 ? 14 : 18,
+                                              ),
+                                            ),
                                             onPressed: () => Navigator.pushNamed(context, '/about'),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 Text("About Me"),
-                                                SizedBox(width: 8),
-                                                Icon(Icons.arrow_forward, size: 18),
+                                                SizedBox(width: 4),
+                                                Icon(Icons.arrow_forward, size: MediaQuery.of(context).size.width < 800 ? 14 : 18),
                                               ],
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 20),
+                                        SizedBox(width: 10),
                                         MouseRegion(
                                           cursor: SystemMouseCursors.click,
                                           child: TextButton(
-                                            onPressed: () => _launchURL('https://calendly.com/mehrasoham-mail'),
                                             style: TextButton.styleFrom(
-                                              foregroundColor: Color(0xFF007AFF),
-                                              padding: EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                                              padding: MediaQuery.of(context).size.width < 800
+                                                  ? EdgeInsets.symmetric(horizontal: 12, vertical: 6)
+                                                  : EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                                              textStyle: TextStyle(
+                                                fontSize: MediaQuery.of(context).size.width < 800 ? 14 : 18,
+                                              ),
                                             ),
-                                            child: Text("Let's Meet!"),
+                                            onPressed: () => _launchURL('https://calendly.com/mehrasoham-mail'),
+                                            child: Text("Let's Meet!", style: TextStyle(fontSize: MediaQuery.of(context).size.width < 800 ? 14 : 18)),
                                           ),
                                         ),
                                       ],
@@ -218,27 +230,39 @@ class HomePage extends StatelessWidget {
                                     MouseRegion(
                                       cursor: SystemMouseCursors.click,
                                       child: ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                          padding: MediaQuery.of(context).size.width < 800
+                                              ? EdgeInsets.symmetric(horizontal: 12, vertical: 6)
+                                              : EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                                          textStyle: TextStyle(
+                                            fontSize: MediaQuery.of(context).size.width < 800 ? 14 : 18,
+                                          ),
+                                        ),
                                         onPressed: () => Navigator.pushNamed(context, '/about'),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
                                             Text("About Me"),
-                                            SizedBox(width: 8),
-                                            Icon(Icons.arrow_forward, size: 18),
+                                            SizedBox(width: 4),
+                                            Icon(Icons.arrow_forward, size: MediaQuery.of(context).size.width < 800 ? 14 : 18),
                                           ],
                                         ),
                                       ),
                                     ),
-                                    SizedBox(width: 20),
+                                    SizedBox(width: 10),
                                     MouseRegion(
                                       cursor: SystemMouseCursors.click,
                                       child: TextButton(
-                                        onPressed: () => _launchURL('https://calendly.com/mehrasoham-mail'),
                                         style: TextButton.styleFrom(
-                                          foregroundColor: Color(0xFF007AFF),
-                                          padding: EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                                          padding: MediaQuery.of(context).size.width < 800
+                                              ? EdgeInsets.symmetric(horizontal: 12, vertical: 6)
+                                              : EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                                          textStyle: TextStyle(
+                                            fontSize: MediaQuery.of(context).size.width < 800 ? 14 : 18,
+                                          ),
                                         ),
-                                        child: Text("Let's Meet!"),
+                                        onPressed: () => _launchURL('https://calendly.com/mehrasoham-mail'),
+                                        child: Text("Let's Meet!", style: TextStyle(fontSize: MediaQuery.of(context).size.width < 800 ? 14 : 18)),
                                       ),
                                     ),
                                   ],
