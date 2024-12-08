@@ -299,8 +299,7 @@ class AboutPage extends StatelessWidget {
                 children: [
                   Text('May 2023 - September 2023'), 
                   Text(
-                    'Implemented ML models to service customer service departments at mortgage banks, servicing over 2000 requests daily. Built out pipelines for
-                    model monitoring, retraining, and deployment',
+                    'Implemented ML models to service customer service departments at mortgage banks, servicing over 2000 requests daily. Built out pipelines for model monitoring, retraining, and deployment',
                     style: TextStyle(color: Colors.grey),
                   )
                 ],
@@ -314,8 +313,7 @@ class AboutPage extends StatelessWidget {
                 children: [
                   Text('December 2023 - May 2024'), 
                   Text(
-                    'Developed applications of ML to accelerate global optimization techniques. Explore the use of Graph Neural Networks to solve
-                    quadtratically constrained quadratic programs',
+                    'Developed applications of ML to accelerate global optimization techniques. Explore the use of Graph Neural Networks to solve quadtratically constrained quadratic programs',
                     style: TextStyle(color: Colors.grey),
                   )
                 ],
@@ -329,8 +327,7 @@ class AboutPage extends StatelessWidget {
                 children: [
                   Text('May 2024 - August 2024'), 
                   Text(
-                    'Developed multi-agent AI applications to scale business operations. Developed models to predict patient behavior and target GTM campaigns. 
-                    Refined and optimized DBT(data build tool) models and SQL scripts to improve efficiency of pipelines',
+                    'Developed multi-agent AI applications to scale business operations. Developed models to predict patient behavior and target GTM campaigns. Refined and optimized DBT(data build tool) models and SQL scripts to improve efficiency of pipelines',
                     style: TextStyle(color: Colors.grey),
                   )
                 ],
@@ -355,105 +352,6 @@ class AboutPage extends StatelessWidget {
               ),,
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class PortfolioPage extends StatelessWidget {
-  final List<Map<String, String>> projects = [
-    {
-      'title': 'Personal Website',
-      'description': 'Built with Flutter, showcasing my skills and projects.',
-      'link': 'https://github.com/your-portfolio'
-    },
-    {
-      'title': 'ML Project',
-      'description': 'A deep learning model to classify images.',
-      'link': 'https://github.com/your-ml-project'
-    },
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('PORTFOLIO',
-          style: TextStyle(
-            letterSpacing: 2,
-            fontWeight: FontWeight.w600,
-            color: Color(0xFF2D3436),
-          ),
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-      ),
-      body: Container(
-        constraints: BoxConstraints(maxWidth: 1200),
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: MediaQuery.of(context).size.width > 1200 ? 3 : 
-                          MediaQuery.of(context).size.width > 800 ? 2 : 1,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20,
-            childAspectRatio: 1.2,
-          ),
-          itemCount: projects.length,
-          itemBuilder: (context, index) {
-            final project = projects[index];
-            return MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: Card(
-                child: Container(
-                  padding: const EdgeInsets.all(32.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: Color(0xFF007AFF).withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Icon(Icons.code, color: Color(0xFF007AFF), size: 32),
-                      ),
-                      SizedBox(height: 24),
-                      Text(
-                        project['title']!,
-                        style: Theme.of(context).textTheme.headlineSmall,
-                      ),
-                      SizedBox(height: 12),
-                      Text(
-                        project['description']!,
-                        style: Theme.of(context).textTheme.bodyLarge,
-                      ),
-                      Spacer(),
-                      TextButton(
-                        onPressed: () {
-                          // Launch project link
-                        },
-                        style: TextButton.styleFrom(
-                          foregroundColor: Color(0xFF007AFF),
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text('Learn More'),
-                            SizedBox(width: 8),
-                            Icon(Icons.arrow_forward, size: 16),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            );
-          },
         ),
       ),
     );
