@@ -129,11 +129,23 @@ class HomePage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Text(
-                                'Building the future\nwith AI & ML',
-                                style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                                  fontSize: screenWidth * 0.08,
-                                ),
+                              Row(
+                                children: [
+                                  if (screenWidth < 600) // Show circle image only on smaller screens
+                                    CircleAvatar(
+                                      radius: 30,
+                                      backgroundImage: AssetImage('assets/soham.jpg'),
+                                    ),
+                                  SizedBox(width: 10),
+                                  Expanded(
+                                    child: Text(
+                                      'Building the future\nwith AI & ML',
+                                      style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                                        fontSize: screenWidth * 0.08,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                               SizedBox(height: 24),
                               Container(
@@ -144,36 +156,68 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 30),
-                              Row(
-                                children: [
-                                  MouseRegion(
-                                    cursor: SystemMouseCursors.click,
-                                    child: ElevatedButton(
-                                      onPressed: () => Navigator.pushNamed(context, '/about'),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Text("About Me"),
-                                          SizedBox(width: 8),
-                                          Icon(Icons.arrow_forward, size: 18),
-                                        ],
+                              if (screenWidth < 600) // Use Column for smaller screens
+                                Column(
+                                  children: [
+                                    MouseRegion(
+                                      cursor: SystemMouseCursors.click,
+                                      child: ElevatedButton(
+                                        onPressed: () => Navigator.pushNamed(context, '/about'),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Text("About Me"),
+                                            SizedBox(width: 8),
+                                            Icon(Icons.arrow_forward, size: 18),
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(width: 20),
-                                  MouseRegion(
-                                    cursor: SystemMouseCursors.click,
-                                    child: TextButton(
-                                      onPressed: () => _launchURL('https://calendly.com/mehrasoham-mail'),
-                                      style: TextButton.styleFrom(
-                                        foregroundColor: Color(0xFF007AFF),
-                                        padding: EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                                    SizedBox(height: 20),
+                                    MouseRegion(
+                                      cursor: SystemMouseCursors.click,
+                                      child: TextButton(
+                                        onPressed: () => _launchURL('https://calendly.com/mehrasoham-mail'),
+                                        style: TextButton.styleFrom(
+                                          foregroundColor: Color(0xFF007AFF),
+                                          padding: EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                                        ),
+                                        child: Text("Let's Meet!"),
                                       ),
-                                      child: Text("Let's Meet!"),
                                     ),
-                                  ),
-                                ],
-                              ),
+                                  ],
+                                )
+                              else // Use Row for larger screens
+                                Row(
+                                  children: [
+                                    MouseRegion(
+                                      cursor: SystemMouseCursors.click,
+                                      child: ElevatedButton(
+                                        onPressed: () => Navigator.pushNamed(context, '/about'),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Text("About Me"),
+                                            SizedBox(width: 8),
+                                            Icon(Icons.arrow_forward, size: 18),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(width: 20),
+                                    MouseRegion(
+                                      cursor: SystemMouseCursors.click,
+                                      child: TextButton(
+                                        onPressed: () => _launchURL('https://calendly.com/mehrasoham-mail'),
+                                        style: TextButton.styleFrom(
+                                          foregroundColor: Color(0xFF007AFF),
+                                          padding: EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                                        ),
+                                        child: Text("Let's Meet!"),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                             ],
                           ),
                         ),
