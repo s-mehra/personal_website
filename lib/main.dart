@@ -75,11 +75,14 @@ class MyWebsite extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('SOHAM MEHRA', 
+        title: Text(
+          'SOHAM MEHRA',
           style: TextStyle(
-            fontSize: 20,
+            fontSize: screenWidth * 0.05,
             letterSpacing: 1,
             fontWeight: FontWeight.w500,
             color: Color(0xFF1E1E1E),
@@ -92,13 +95,16 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Container(
           constraints: BoxConstraints(maxWidth: 1200),
-          padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 60.0),
+          padding: EdgeInsets.symmetric(
+            horizontal: screenWidth * 0.1,
+            vertical: 60.0,
+          ),
           child: Column(
             children: [
               Expanded(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
-                    return Row(
+                    return Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         // Left side content
@@ -125,7 +131,9 @@ class HomePage extends StatelessWidget {
                               ),
                               Text(
                                 'Building the future\nwith AI & ML',
-                                style: Theme.of(context).textTheme.headlineLarge,
+                                style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                                  fontSize: screenWidth * 0.08,
+                                ),
                               ),
                               SizedBox(height: 24),
                               Container(
@@ -169,7 +177,7 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(width: 60),
+                        SizedBox(height: 20),
                         // Right side image
                         if (constraints.maxWidth > 600) // Show image only on larger screens
                           Expanded(
