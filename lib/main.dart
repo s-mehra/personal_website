@@ -150,7 +150,7 @@ class HomePage extends StatelessWidget {
                               Container(
                                 constraints: BoxConstraints(maxWidth: 500),
                                 child: Text(
-                                  'I\'m an AI/ML Engineer passionate about creating intelligent solutions that make a difference. Currently pursuing Industrial and Systems Engineering at Virginia Tech.',
+                                  'I am AI/ML engineer passionate about building elegant, simple solutions that can change lives in healthcare. Currently studying Industrial and Systems Engineering and Computer Science at Virginia Tech.',
                                   style: Theme.of(context).textTheme.bodyLarge,
                                 ),
                               ),
@@ -344,7 +344,7 @@ class AboutPage extends StatelessWidget {
                     SizedBox(width: 20),
                     Expanded(
                       child: Text(
-                        'I am a passionate software engineer with a strong foundation in data science and machine learning...',
+                        'Hey everyone! I am driven by impact and innovation, majoring in Industrial and Systems Engineering while pursuing minors in Computer Science. I believe in learning from every discipline and individual, as knowledge transcends fields and career paths. My work focuses on leveraging AI/ML and Data Science to drive impactful solutions in healthcare.',
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: screenWidth > 800 ? 16 : 14, // Adjust font size
                         ),
