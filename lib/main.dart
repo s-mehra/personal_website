@@ -82,7 +82,7 @@ class HomePage extends StatelessWidget {
         title: Text(
           'SOHAM MEHRA',
           style: TextStyle(
-            fontSize: screenWidth * 0.05,
+            fontSize: screenWidth * 0.02,
             letterSpacing: 1,
             fontWeight: FontWeight.w500,
             color: Color(0xFF1E1E1E),
@@ -96,15 +96,15 @@ class HomePage extends StatelessWidget {
         child: Container(
           constraints: BoxConstraints(maxWidth: 1200),
           padding: EdgeInsets.symmetric(
-            horizontal: screenWidth * 0.1,
-            vertical: 60.0,
+            horizontal: screenWidth * 0.08,
+            vertical: 40.0,
           ),
           child: Column(
             children: [
               Expanded(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
-                    return Column(
+                    return Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         // Left side content
@@ -115,7 +115,7 @@ class HomePage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                margin: EdgeInsets.only(bottom: 30),
+                                margin: EdgeInsets.only(bottom: 20),
                                 padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                                 decoration: BoxDecoration(
                                   color: Color(0xFF007AFF).withOpacity(0.1),
@@ -131,23 +131,22 @@ class HomePage extends StatelessWidget {
                               ),
                               Row(
                                 children: [
-                                  if (screenWidth < 600) // Show circle image only on smaller screens
-                                    CircleAvatar(
-                                      radius: 30,
-                                      backgroundImage: AssetImage('assets/soham.jpg'),
-                                    ),
-                                  SizedBox(width: 10),
                                   Expanded(
                                     child: Text(
                                       'Building the future\nwith AI & ML',
                                       style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                                        fontSize: screenWidth * 0.08,
+                                        fontSize: screenWidth * 0.06,
                                       ),
                                     ),
                                   ),
+                                  if (screenWidth < 800) // Show circle image only on smaller screens
+                                    CircleAvatar(
+                                      radius: 30,
+                                      backgroundImage: AssetImage('assets/soham.jpg'),
+                                    ),
                                 ],
                               ),
-                              SizedBox(height: 24),
+                              SizedBox(height: 20),
                               Container(
                                 constraints: BoxConstraints(maxWidth: 500),
                                 child: Text(
@@ -155,8 +154,8 @@ class HomePage extends StatelessWidget {
                                   style: Theme.of(context).textTheme.bodyLarge,
                                 ),
                               ),
-                              SizedBox(height: 30),
-                              if (screenWidth < 600) // Use Column for smaller screens
+                              SizedBox(height: 20),
+                              if (screenWidth < 800) // Use Column for smaller screens
                                 Column(
                                   children: [
                                     MouseRegion(
@@ -221,9 +220,9 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(width: 20),
                         // Right side image
-                        if (constraints.maxWidth > 600) // Show image only on larger screens
+                        if (constraints.maxWidth > 800) // Show image only on larger screens
                           Expanded(
                             flex: 2,
                             child: ClipRRect(
@@ -254,25 +253,44 @@ class HomePage extends StatelessWidget {
               // Social links at the bottom
               Container(
                 padding: EdgeInsets.symmetric(vertical: 40),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      icon: Icon(FontAwesomeIcons.linkedinIn),
-                      onPressed: () => _launchURL('https://www.linkedin.com/in/soham-mehra/'),
-                    ),
-                    SizedBox(width: 20),
-                    IconButton(
-                      icon: Icon(FontAwesomeIcons.github),
-                      onPressed: () => _launchURL('https://github.com/s-mehra'),
-                    ),
-                    SizedBox(width: 20),
-                    IconButton(
-                      icon: Icon(FontAwesomeIcons.envelope),
-                      onPressed: () => _launchURL('mailto:mehrasoham.mail@gmail.com'),
-                    ),
-                  ],
-                ),
+                child: screenWidth < 800
+                    ? Column(
+                        children: [
+                          IconButton(
+                            icon: Icon(FontAwesomeIcons.linkedinIn),
+                            onPressed: () => _launchURL('https://www.linkedin.com/in/soham-mehra/'),
+                          ),
+                          SizedBox(height: 20),
+                          IconButton(
+                            icon: Icon(FontAwesomeIcons.github),
+                            onPressed: () => _launchURL('https://github.com/s-mehra'),
+                          ),
+                          SizedBox(height: 20),
+                          IconButton(
+                            icon: Icon(FontAwesomeIcons.envelope),
+                            onPressed: () => _launchURL('mailto:mehrasoham.mail@gmail.com'),
+                          ),
+                        ],
+                      )
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                            icon: Icon(FontAwesomeIcons.linkedinIn),
+                            onPressed: () => _launchURL('https://www.linkedin.com/in/soham-mehra/'),
+                          ),
+                          SizedBox(width: 20),
+                          IconButton(
+                            icon: Icon(FontAwesomeIcons.github),
+                            onPressed: () => _launchURL('https://github.com/s-mehra'),
+                          ),
+                          SizedBox(width: 20),
+                          IconButton(
+                            icon: Icon(FontAwesomeIcons.envelope),
+                            onPressed: () => _launchURL('mailto:mehrasoham.mail@gmail.com'),
+                          ),
+                        ],
+                      ),
               ),
             ],
           ),
