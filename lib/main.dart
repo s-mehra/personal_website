@@ -285,6 +285,9 @@ class HomePage extends StatelessWidget {
 class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('About Me'),
@@ -293,119 +296,119 @@ class AboutPage extends StatelessWidget {
         centerTitle: true,
         iconTheme: IconThemeData(color: Colors.black),
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
-        child: Column(
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'About Me',
+                  style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                    fontSize: screenWidth > 800 ? 32 : 24, // Adjust font size
+                  ),
+                ),
+                Row(
+                  children: [
+                    const CircleAvatar(
+                      radius: 60,
+                      backgroundImage: AssetImage('assets/soham.jpg'),
+                    ),
+                    SizedBox(width: 20),
+                    Expanded(
+                      child: Text(
+                        'I am a passionate software engineer with a strong foundation in data science and machine learning...',
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          fontSize: screenWidth > 800 ? 16 : 14, // Adjust font size
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                // Timeline or Career Journey
+                Text(
+                  'Career Journey',
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontSize: screenWidth > 800 ? 28 : 20, // Adjust font size
+                  ),
+                ),
+                SizedBox(height: 10),
+                ..._buildExperienceList(context, screenWidth),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  List<Widget> _buildExperienceList(BuildContext context, double screenWidth) {
+    final experiences = [
+      {
+        'title': 'B.Sc in Industrial and Systems Engineering',
+        'subtitle': 'Virginia Tech - 2025',
+        'icon': Icons.school,
+      },
+      {
+        'title': 'Undergraduate Research Assistant for Virginia Tech Department of Biomedical Engineering and Mechanics',
+        'subtitle': 'November 2022 - August 2023',
+        'description': 'Mobile developer for applications reducing risk of pregnant mothers through predictions of biomarkers by a convolutional neural network',
+        'icon': Icons.work,
+      },
+      {
+        'title': 'Data Science Intern at Black Knight',
+        'subtitle': 'May 2023 - September 2023',
+        'description': 'Implemented ML models to service customer service departments at mortgage banks, servicing over 2000 requests daily. Built out pipelines for model monitoring, retraining, and deployment',
+        'icon': Icons.work,
+      },
+      {
+        'title': 'Machine Learning Researcher for Virginia Tech Grado Department of Industrial and Systems Engineering',
+        'subtitle': 'December 2023 - May 2024',
+        'description': 'Developed applications of ML to accelerate global optimization techniques. Explore the use of Graph Neural Networks to solve quadtratically constrained quadratic programs',
+        'icon': Icons.work,
+      },
+      {
+        'title': 'AI Engineer and Data Scientist at NuvoAir Medical',
+        'subtitle': 'May 2024 - August 2024',
+        'description': 'Developed multi-agent AI applications to scale business operations. Developed models to predict patient behavior and target GTM campaigns. Refined and optimized DBT(data build tool) models and SQL scripts to improve efficiency of pipelines',
+        'icon': Icons.work,
+      },
+      {
+        'title': 'Founder at Morph Labs',
+        'subtitle': 'September 2024 - Present',
+        'description': 'Building the next generation of AI powered prosthetics. Lead all software initiatives: ML, mobile, and cloud development',
+        'icon': Icons.work,
+      },
+    ];
+
+    return experiences.map((experience) {
+      return ListTile(
+        leading: Icon(experience['icon'], color: Theme.of(context).primaryColor),
+        title: Text(
+          experience['title'],
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+            fontSize: screenWidth > 800 ? 16 : 14, // Adjust font size
+          ),
+        ),
+        subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'About Me',
-              style: Theme.of(context).textTheme.displayLarge,
-            ),
-            Row(
-              children: [
-                const CircleAvatar(
-                  radius: 60,
-                  backgroundImage: AssetImage('assets/soham.jpg'),
-                ),
-                SizedBox(width: 20),
-                Expanded(
-                  child: Text(
-                    'I am a passionate software engineer with a strong foundation in data science and machine learning...',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-            // Timeline or Career Journey
-            Text(
-              'Career Journey',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            SizedBox(height: 10),
-            ListTile(
-              leading: Icon(Icons.school, color: Theme.of(context).primaryColor),
-              title: Text('B.Sc in Industrial and Systems Engineering'),
-              subtitle: Text('Virginia Tech - 2025'),
-            ),
-            ListTile(
-              leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
-              title: Text('Undergraduate Research Assistant for Virginia Tech Department of Biomedical Engineering and Mechanics'),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('November 2022 - August 2023'), 
-                  Text(
-                    'Mobile developer for applications reducing risk of pregnant mothers through predictions of biomarkers by a convolutional neural network',
-                    style: TextStyle(color: Colors.grey),
-                  )
-                ],
+              experience['subtitle'],
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                fontSize: screenWidth > 800 ? 14 : 12, // Adjust font size
               ),
             ),
-            ListTile(
-              leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
-              title: Text('Data Science Intern at Black Knight'),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('May 2023 - September 2023'), 
-                  Text(
-                    'Implemented ML models to service customer service departments at mortgage banks, servicing over 2000 requests daily. Built out pipelines for model monitoring, retraining, and deployment',
-                    style: TextStyle(color: Colors.grey),
-                  )
-                ],
+            if (experience.containsKey('description'))
+              Text(
+                experience['description'],
+                style: TextStyle(color: Colors.grey, fontSize: screenWidth > 800 ? 12 : 10),
               ),
-            ),
-            ListTile(
-              leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
-              title: Text('Machine Learning Researcher for Virginia Tech Grado Department of Industrial and Systems Engineering'),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('December 2023 - May 2024'), 
-                  Text(
-                    'Developed applications of ML to accelerate global optimization techniques. Explore the use of Graph Neural Networks to solve quadtratically constrained quadratic programs',
-                    style: TextStyle(color: Colors.grey),
-                  )
-                ],
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
-              title: Text('AI Engineer and Data Scientist at NuvoAir Medical'),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('May 2024 - August 2024'), 
-                  Text(
-                    'Developed multi-agent AI applications to scale business operations. Developed models to predict patient behavior and target GTM campaigns. Refined and optimized DBT(data build tool) models and SQL scripts to improve efficiency of pipelines',
-                    style: TextStyle(color: Colors.grey),
-                  )
-                ],
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
-              title: Text('Founder at Morph Labs'),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('September 2024 - Present'), 
-                  Text(
-                    'Building the next generation of AI powered prosthetics. Lead all software initiatives: ML, mobile, and cloud development',
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                  Text(
-                    'https://morphlabs.tech',
-                    style: TextStyle(color: Colors.grey),
-                  )
-                ],
-              ),
-            ),
           ],
         ),
-      ),
-    );
+      );
+    }).toList();
   }
 }
