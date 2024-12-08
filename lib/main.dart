@@ -96,102 +96,107 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    // Left side content
-                    Expanded(
-                      flex: 3,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(bottom: 30),
-                            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                            decoration: BoxDecoration(
-                              color: Color(0xFF007AFF).withOpacity(0.1),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Text(
-                              'Welcome to my portfolio',
-                              style: TextStyle(
-                                color: Color(0xFF007AFF),
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          Text(
-                            'Building the future\nwith AI & ML',
-                            style: Theme.of(context).textTheme.headlineLarge,
-                          ),
-                          SizedBox(height: 24),
-                          Container(
-                            constraints: BoxConstraints(maxWidth: 500),
-                            child: Text(
-                              'I\'m an AI/ML Engineer passionate about creating intelligent solutions that make a difference. Currently pursuing Industrial and Systems Engineering at Virginia Tech.',
-                              style: Theme.of(context).textTheme.bodyLarge,
-                            ),
-                          ),
-                          SizedBox(height: 30),
-                          Row(
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    return Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        // Left side content
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: ElevatedButton(
-                                  onPressed: () => Navigator.pushNamed(context, '/about'),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Text("About Me"),
-                                      SizedBox(width: 8),
-                                      Icon(Icons.arrow_forward, size: 18),
-                                    ],
+                              Container(
+                                margin: EdgeInsets.only(bottom: 30),
+                                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                                decoration: BoxDecoration(
+                                  color: Color(0xFF007AFF).withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Text(
+                                  'Welcome to my portfolio',
+                                  style: TextStyle(
+                                    color: Color(0xFF007AFF),
+                                    fontWeight: FontWeight.w500,
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 20),
-                              MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: TextButton(
-                                  onPressed: () => _launchURL('https://calendly.com/mehrasoham-mail'),
-                                  style: TextButton.styleFrom(
-                                    foregroundColor: Color(0xFF007AFF),
-                                    padding: EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-                                  ),
-                                  child: Text("Let's Meet!"),
+                              Text(
+                                'Building the future\nwith AI & ML',
+                                style: Theme.of(context).textTheme.headlineLarge,
+                              ),
+                              SizedBox(height: 24),
+                              Container(
+                                constraints: BoxConstraints(maxWidth: 500),
+                                child: Text(
+                                  'I\'m an AI/ML Engineer passionate about creating intelligent solutions that make a difference. Currently pursuing Industrial and Systems Engineering at Virginia Tech.',
+                                  style: Theme.of(context).textTheme.bodyLarge,
                                 ),
                               ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(width: 60),
-                    // Right side image
-                    Expanded(
-                      flex: 2,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
-                        child: Container(
-                          height: 400,  // Adjusted height
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.1),
-                                blurRadius: 20,
-                                offset: Offset(0, 10),
+                              SizedBox(height: 30),
+                              Row(
+                                children: [
+                                  MouseRegion(
+                                    cursor: SystemMouseCursors.click,
+                                    child: ElevatedButton(
+                                      onPressed: () => Navigator.pushNamed(context, '/about'),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Text("About Me"),
+                                          SizedBox(width: 8),
+                                          Icon(Icons.arrow_forward, size: 18),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 20),
+                                  MouseRegion(
+                                    cursor: SystemMouseCursors.click,
+                                    child: TextButton(
+                                      onPressed: () => _launchURL('https://calendly.com/mehrasoham-mail'),
+                                      style: TextButton.styleFrom(
+                                        foregroundColor: Color(0xFF007AFF),
+                                        padding: EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                                      ),
+                                      child: Text("Let's Meet!"),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
-                          ),
-                          child: Image.asset(
-                            'assets/soham.jpg',
-                            fit: BoxFit.cover,
                           ),
                         ),
-                      ),
-                    ),
-                  ],
+                        SizedBox(width: 60),
+                        // Right side image
+                        if (constraints.maxWidth > 600) // Show image only on larger screens
+                          Expanded(
+                            flex: 2,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(16),
+                              child: Container(
+                                height: 400,  // Adjusted height
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.1),
+                                      blurRadius: 20,
+                                      offset: Offset(0, 10),
+                                    ),
+                                  ],
+                                ),
+                                child: Image.asset(
+                                  'assets/soham.jpg',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                      ],
+                    );
+                  },
                 ),
               ),
               // Social links at the bottom
