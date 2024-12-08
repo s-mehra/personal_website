@@ -274,18 +274,80 @@ class AboutPage extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
+              title: Text('Undergraduate Research Assistant for Virginia Tech Department of Biomedical Engineering and Mechanics'),
+              subtitle: Column(
+                crossAxisAlignment: crossAxisAlignment.start,
+                children: [
+                  Text('November 2022 - August 2023'), 
+                  Text(
+                    'Mobile developer for applications reducing risk of pregnant mothers through predictions of biomarkers by a convolutional neural network',
+                    style: TextStyle(color: Colors.grey),
+                  )
+                ],
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
               title: Text('Data Science Intern at Black Knight'),
-              subtitle: Text('May 2023 - September 2023'),
+              subtitle: Column(
+                crossAxisAlignment: crossAxisAlignment.start,
+                children: [
+                  Text('May 2023 - September 2023'), 
+                  Text(
+                    'Implemented ML models to service customer service departments at mortgage banks, servicing over 2000 requests daily. Built out pipelines for
+                    model monitoring, retraining, and deployment',
+                    style: TextStyle(color: Colors.grey),
+                  )
+                ],
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
+              title: Text('Machine Learning Researcher for Virginia Tech Grado Department of Industrial and Systems Engineering'),
+              subtitle: Column(
+                crossAxisAlignment: crossAxisAlignment.start,
+                children: [
+                  Text('December 2023 - May 2024'), 
+                  Text(
+                    'Developed applications of ML to accelerate global optimization techniques. Explore the use of Graph Neural Networks to solve
+                    quadtratically constrained quadratic programs',
+                    style: TextStyle(color: Colors.grey),
+                  )
+                ],
+              ),
             ),
             ListTile(
               leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
               title: Text('AI Engineer and Data Scientist at NuvoAir Medical'),
-              subtitle: Text('May 2024 - August 2024'),
+              subtitle: Column(
+                crossAxisAlignment: crossAxisAlignment.start,
+                children: [
+                  Text('May 2024 - August 2024'), 
+                  Text(
+                    'Developed multi-agent AI applications to scale business operations. Developed models to predict patient behavior and target GTM campaigns. 
+                    Refined and optimized DBT(data build tool) models and SQL scripts to improve efficiency of pipelines',
+                    style: TextStyle(color: Colors.grey),
+                  )
+                ],
+              ),
             ),
             ListTile(
               leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
               title: Text('Founder at Morph Labs'),
-              subtitle: Text('September 2024 - Present'),
+              subtitle: Column(
+                crossAxisAlignment: crossAxisAlignment.start,
+                children: [
+                  Text('September 2024 - Present'), 
+                  Text(
+                    'Building the next generation of AI powered prosthetics. Lead all software initiatives: ML, mobile, and cloud development',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  Text(
+                    'https://morphlabs.tech',
+                    style: TextStyle(color: Colors.grey),
+                  )
+                ],
+              ),,
             ),
           ],
         ),
