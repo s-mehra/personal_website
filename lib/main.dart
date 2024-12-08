@@ -185,7 +185,7 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                           child: Image.asset(
-                            'soham.jpg',
+                            'assets/soham.jpg',
                             fit: BoxFit.cover,
                           ),
                         ),
