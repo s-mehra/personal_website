@@ -281,7 +281,7 @@ class AboutPage extends StatelessWidget {
               leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
               title: Text('Undergraduate Research Assistant for Virginia Tech Department of Biomedical Engineering and Mechanics'),
               subtitle: Column(
-                crossAxisAlignment: crossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('November 2022 - August 2023'), 
                   Text(
@@ -295,7 +295,7 @@ class AboutPage extends StatelessWidget {
               leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
               title: Text('Data Science Intern at Black Knight'),
               subtitle: Column(
-                crossAxisAlignment: crossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('May 2023 - September 2023'), 
                   Text(
@@ -309,7 +309,7 @@ class AboutPage extends StatelessWidget {
               leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
               title: Text('Machine Learning Researcher for Virginia Tech Grado Department of Industrial and Systems Engineering'),
               subtitle: Column(
-                crossAxisAlignment: crossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('December 2023 - May 2024'), 
                   Text(
@@ -323,7 +323,7 @@ class AboutPage extends StatelessWidget {
               leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
               title: Text('AI Engineer and Data Scientist at NuvoAir Medical'),
               subtitle: Column(
-                crossAxisAlignment: crossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('May 2024 - August 2024'), 
                   Text(
@@ -337,7 +337,7 @@ class AboutPage extends StatelessWidget {
               leading: Icon(Icons.work, color: Theme.of(context).primaryColor),
               title: Text('Founder at Morph Labs'),
               subtitle: Column(
-                crossAxisAlignment: crossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('September 2024 - Present'), 
                   Text(
@@ -349,7 +349,7 @@ class AboutPage extends StatelessWidget {
                     style: TextStyle(color: Colors.grey),
                   )
                 ],
-              ),,
+              ),
             ),
           ],
         ),
