@@ -385,9 +385,9 @@ class AboutPage extends StatelessWidget {
 
     return experiences.map((experience) {
       return ListTile(
-        leading: Icon(experience['icon'], color: Theme.of(context).primaryColor),
+        leading: Icon(experience['icon'] as IconData?, color: Theme.of(context).primaryColor),
         title: Text(
-          experience['title'],
+          experience['title'] as String,
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
             fontSize: screenWidth > 800 ? 16 : 14, // Adjust font size
           ),
@@ -396,14 +396,14 @@ class AboutPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              experience['subtitle'],
+              experience['subtitle'] as String,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 fontSize: screenWidth > 800 ? 14 : 12, // Adjust font size
               ),
             ),
             if (experience.containsKey('description'))
               Text(
-                experience['description'],
+                experience['description'] as String,
                 style: TextStyle(color: Colors.grey, fontSize: screenWidth > 800 ? 12 : 10),
               ),
           ],
