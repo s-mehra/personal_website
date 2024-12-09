@@ -350,7 +350,7 @@ class AboutPage extends StatelessWidget {
                     SizedBox(width: 20),
                     Expanded(
                       child: Text(
-                        "I specialize in designing impactful AI/ML solutions and leading innovative projects that drive real-world results, particularly in healthcare and assistive technologies. With hands-on experience in developing deep learning-powered prosthetics, predictive analytics, and LLM applications, I bring a blend of technical expertise and venture-building acumen. Proficient in Python, JavaScript, and cloud-based tools, I’ve spearheaded cross-functional teams, optimized workflows, and delivered products that make a difference. Let’s collaborate to transform ideas into impactful solutions—reach out to connect!",
+                        "I specialize in designing impactful AI/ML solutions and leading innovative projects that drive real-world results, particularly in healthcare and assistive technologies. With hands-on experience in developing deep learning-powered prosthetics, predictive analytics, and LLM applications, I bring a blend of technical expertise and venture-building acumen. Proficient in Python, JavaScript, and cloud-based tools, I’ve delivered products that make a difference. Let’s collaborate to transform ideas into impactful solutions—reach out to connect!",
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: screenWidth > 800 ? 16 : 14, // Adjust font size
                         ),
