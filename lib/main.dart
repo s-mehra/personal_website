@@ -344,7 +344,7 @@ class AboutPage extends StatelessWidget {
                     SizedBox(width: 20),
                     Expanded(
                       child: Text(
-                        'Hey everyone! I am driven by impact and innovation, majoring in Industrial and Systems Engineering while pursuing minors in Computer Science. I believe in learning from every discipline and individual, as knowledge transcends fields and career paths. My work focuses on leveraging AI/ML and Data Science to drive impactful solutions in healthcare.',
+                        "I specialize in designing impactful AI/ML solutions and leading innovative projects that drive real-world results, particularly in healthcare and assistive technologies. With hands-on experience in developing deep learning-powered prosthetics, predictive analytics, and LLM applications, I bring a blend of technical expertise and venture-building acumen. Proficient in Python, JavaScript, and cloud-based tools, I’ve spearheaded cross-functional teams, optimized workflows, and delivered products that make a difference. Let’s collaborate to transform ideas into impactful solutions—reach out to connect!",
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontSize: screenWidth > 800 ? 16 : 14, // Adjust font size
                         ),
@@ -373,26 +373,9 @@ class AboutPage extends StatelessWidget {
   List<Widget> _buildExperienceList(BuildContext context, double screenWidth) {
     final experiences = [
       {
-        'title': 'B.Sc in Industrial and Systems Engineering',
-        'subtitle': 'Virginia Tech - 2025',
-        'icon': Icons.school,
-      },
-      {
-        'title': 'Undergraduate Research Assistant for Virginia Tech Department of Biomedical Engineering and Mechanics',
-        'subtitle': 'November 2022 - August 2023',
-        'description': 'Mobile developer for applications reducing risk of pregnant mothers through predictions of biomarkers by a convolutional neural network',
-        'icon': Icons.work,
-      },
-      {
-        'title': 'Data Science Intern at Black Knight',
-        'subtitle': 'May 2023 - September 2023',
-        'description': 'Implemented ML models to service customer service departments at mortgage banks, servicing over 2000 requests daily. Built out pipelines for model monitoring, retraining, and deployment',
-        'icon': Icons.work,
-      },
-      {
-        'title': 'Machine Learning Researcher for Virginia Tech Grado Department of Industrial and Systems Engineering',
-        'subtitle': 'December 2023 - May 2024',
-        'description': 'Developed applications of ML to accelerate global optimization techniques. Explore the use of Graph Neural Networks to solve quadtratically constrained quadratic programs',
+        'title': 'Founder at Morph Labs',
+        'subtitle': 'September 2024 - Present',
+        'description': 'Building the next generation of AI powered prosthetics. Lead all software initiatives: ML, mobile, and cloud development',
         'icon': Icons.work,
       },
       {
@@ -402,10 +385,27 @@ class AboutPage extends StatelessWidget {
         'icon': Icons.work,
       },
       {
-        'title': 'Founder at Morph Labs',
-        'subtitle': 'September 2024 - Present',
-        'description': 'Building the next generation of AI powered prosthetics. Lead all software initiatives: ML, mobile, and cloud development',
+        'title': 'Machine Learning Researcher for Virginia Tech Grado Department of Industrial and Systems Engineering',
+        'subtitle': 'December 2023 - May 2024',
+        'description': 'Developed applications of ML to accelerate global optimization techniques. Explore the use of Graph Neural Networks to solve quadtratically constrained quadratic programs',
         'icon': Icons.work,
+      },
+      {
+        'title': 'Data Science Intern at Black Knight',
+        'subtitle': 'May 2023 - September 2023',
+        'description': 'Implemented ML models to service customer service departments at mortgage banks, servicing over 2000 requests daily. Built out pipelines for model monitoring, retraining, and deployment',
+        'icon': Icons.work,
+      },
+      {
+        'title': 'Undergraduate Research Assistant for Virginia Tech Department of Biomedical Engineering and Mechanics',
+        'subtitle': 'November 2022 - August 2023',
+        'description': 'Mobile developer for applications reducing risk of pregnant mothers through predictions of biomarkers by a convolutional neural network',
+        'icon': Icons.work,
+      },
+      {
+        'title': 'B.Sc in Industrial and Systems Engineering',
+        'subtitle': 'Virginia Tech - 2025',
+        'icon': Icons.school,
       },
     ];
 
