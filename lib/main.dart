@@ -64,9 +64,15 @@ class MyWebsite extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xFFFAFAFA),
       ),
       initialRoute: '/',
-      routes: {
-        '/': (context) => HomePage(),
-        '/about': (context) => AboutPage(),
+      onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case '/':
+            return MaterialPageRoute(builder: (context) => HomePage());
+          case '/about':
+            return MaterialPageRoute(builder: (context) => AboutPage());
+          default:
+            return MaterialPageRoute(builder: (context) => HomePage());
+        }
       },
     );
   }
