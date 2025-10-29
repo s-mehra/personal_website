@@ -39,7 +39,7 @@ function App() {
         </p>
 
         {/* Morph Labs */}
-        <div className="max-w-2xl text-center mb-5 md:mb-10">
+        <div className="w-full max-w-2xl text-center mb-5 md:mb-10 px-4">
           <h2 className="font-serif text-2xl md:text-3xl font-semibold mb-2 md:mb-3 tracking-tight">
             Building the Future
           </h2>
@@ -55,7 +55,7 @@ function App() {
               <span className="ml-1 transform group-hover:translate-x-1 transition-transform duration-200">→</span>
             </a>
           </p>
-          <p className="font-sans text-sm md:text-base text-gray-400 leading-relaxed max-w-xl mx-auto">
+          <p className="font-sans text-sm md:text-base text-gray-400 leading-relaxed max-w-md md:max-w-xl mx-auto">
             Pioneering non-invasive telekinesis. Controlling robotics with your brain.
             No surgery needed.
           </p>
