@@ -1,20 +1,57 @@
-<<<<<<< HEAD
-# personal_website
-=======
-# personal_website
+# Soham Mehra - Personal Website
 
-A new Flutter project.
+A minimalist, Apple-inspired personal landing page built with React and Vite. Features a clean design with Morph Labs branding and smooth animations.
 
-## Getting Started
+## Tech Stack
 
-This project is a starting point for a Flutter application.
+- **Framework**: React 18 with Vite
+- **Styling**: Tailwind CSS
+- **Icons**: React Icons
+- **Fonts**: Playfair Display (serif) + Inter (sans-serif)
+- **Deployment**: Netlify
 
-A few resources to get you started if this is your first Flutter project:
+## Design Philosophy
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Pure black background with high contrast
+- Morph Labs purple accent (#ce6cb6)
+- Clean typography hierarchy
+- Responsive, mobile-first design
+- Subtle animations and hover effects
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
->>>>>>> 13e436e (Initial Commit)
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Project Structure
+
+```
+├── src/
+│   ├── App.jsx          # Main application component
+│   ├── main.jsx         # React entry point
+│   └── index.css        # Global styles with Tailwind
+├── public/
+│   ├── soham.jpg        # Profile photo
+│   └── favicon.png      # Site favicon
+├── index.html           # HTML template
+└── netlify.toml         # Netlify deployment config
+```
+
+## Deployment
+
+Automatically deploys to Netlify on push to main branch. Build command: `npm run build`, publish directory: `dist`.
+
+---
+
+Built with care by Soham Mehra
