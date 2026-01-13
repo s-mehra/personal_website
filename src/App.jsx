@@ -44,7 +44,7 @@ function App() {
             Building the Future
           </h2>
           <p className="font-sans text-sm md:text-base text-gray-300 mb-2 md:mb-3">
-            Founder & CTO at{' '}
+            Co-Founder & CTO at{' '}
             <a
               href="https://morphlabs.tech"
               target="_blank"
