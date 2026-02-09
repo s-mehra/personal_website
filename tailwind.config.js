@@ -7,12 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        morph: '#ce6cb6',
-        'morph-hover': '#d97ac4',
+        morph: '#D956ff',
+        'morph-hover': '#A000CC',
       },
       fontFamily: {
-        serif: ['Playfair Display', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        serif: ['Signifier', 'serif'],
+        sans: ['Roobert', 'sans-serif'],
+        mono: ['Roobert SemiMono', 'monospace'],
       },
     },
   },
