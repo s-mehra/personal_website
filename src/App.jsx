@@ -1,11 +1,12 @@
-import { FaYoutube, FaXTwitter, FaInstagram, FaMedium, FaLinkedin } from 'react-icons/fa6'
+import { FaYoutube, FaXTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa6'
+import { SiSubstack } from 'react-icons/si'
 
 function App() {
   const socialIcons = [
     { href: "https://www.youtube.com/@Soham-Mehra", icon: <FaYoutube />, label: "YouTube" },
     { href: "https://x.com/itssohammehra", icon: <FaXTwitter />, label: "X" },
     { href: "https://instagram.com/sohammehra_", icon: <FaInstagram />, label: "Instagram" },
-    { href: "https://medium.com/@sohammehra", icon: <FaMedium />, label: "Medium" },
+    { href: "https://substack.com/@sohammehra", icon: <SiSubstack />, label: "Substack" },
     { href: "https://www.linkedin.com/in/soham-mehra/", icon: <FaLinkedin />, label: "LinkedIn" },
   ]
 
