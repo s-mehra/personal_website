@@ -42,7 +42,7 @@ function App() {
 
         {/* Tagline */}
         <p className="font-sans text-sm md:text-base text-white/50 text-center max-w-2xl mb-8 md:mb-12 tracking-wide uppercase animate-fade-in-up delay-3">
-          Making the impossible inevitable
+          Dream Big. Work Hard. Be Delusional. Learn From Everyone.
         </p>
 
         {/* Morph Labs */}
