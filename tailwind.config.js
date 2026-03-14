@@ -15,6 +15,9 @@ export default {
         sans: ['Roobert', 'sans-serif'],
         mono: ['Roobert SemiMono', 'monospace'],
       },
+      letterSpacing: {
+        editorial: '0.15em',
+      },
     },
   },
   plugins: [],
