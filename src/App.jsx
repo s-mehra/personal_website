@@ -14,17 +14,17 @@ function App() {
 
       {/* Content */}
       <div className="max-w-2xl px-8 md:px-16 lg:px-24 py-16 md:py-0 animate-fade-in">
-        {/* Profile photo */}
-        <img
-          src="/soham.jpg"
-          alt="Soham Mehra"
-          className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover grayscale opacity-70 mb-6 md:mb-8"
-        />
-
-        {/* Name */}
-        <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl tracking-[-0.02em] text-white">
-          Soham Mehra
-        </h1>
+        {/* Name + Photo */}
+        <div className="flex items-center gap-4 md:gap-5">
+          <img
+            src="/soham.jpg"
+            alt="Soham Mehra"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover grayscale opacity-70"
+          />
+          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl tracking-[-0.02em] text-white">
+            Soham Mehra
+          </h1>
+        </div>
 
         {/* Separator */}
         <div className="w-12 h-px bg-white/10 my-6 md:my-8" />
