@@ -17,7 +17,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@itssohammehra">
+  <meta name="twitter:site" content="@sohammehra_">
   <meta name="twitter:title" content="Soham Mehra — Co-Founder & CTO, Morph Labs">
   <meta name="twitter:description" content="Co-Founder & CTO at Morph Labs, building non-invasive brain-computer interfaces for prosthetics. Neurotech, EEG, AI/ML.">
   <meta name="twitter:image" content="https://sohammehra.com/soham.jpg">
@@ -35,86 +35,34 @@
       "url": "https://morphlabs.tech"
     },
     "url": "https://sohammehra.com",
+    "knowsAbout": ["Brain-Computer Interfaces", "EEG", "Deep Learning", "Computational Neuroscience", "Prosthetics", "Brain Foundation Models"],
     "sameAs": [
       "https://www.youtube.com/@Soham-Mehra",
-      "https://x.com/itssohammehra",
+      "https://x.com/sohammehra_",
       "https://instagram.com/sohammehra_",
       "https://substack.com/@sohammehra",
-      "https://www.linkedin.com/in/soham-mehra/"
+      "https://www.linkedin.com/in/soham-mehra/",
+      "https://www.tiktok.com/@soham.mehra"
     ]
   }
   </script>
 
+  <link rel="stylesheet" href="/shared.css">
   <style>
-    @font-face {
-      font-family: 'Roobert';
-      src: url('/fonts/roobert/Roobert-Regular.otf') format('opentype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Roobert';
-      src: url('/fonts/roobert/Roobert-Medium.otf') format('opentype');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Roobert SemiMono';
-      src: url('/fonts/roobert/RoobertSemiMono-SemiBold.otf') format('opentype');
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Signifier';
-      src: url('/fonts/signifier/Signifier-Regular.otf') format('opentype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: 'Roobert', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      background-color: #050505;
-      color: #fff;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
     .page {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
       position: relative;
     }
 
-    .glow {
-      position: fixed;
-      bottom: 0;
-      right: 0;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, #D956ff 0%, transparent 70%);
-      opacity: 0.04;
-      filter: blur(64px);
-      pointer-events: none;
-    }
-
     .content {
-      max-width: 42rem;
-      padding: 4rem 2rem;
+      width: 100%;
+      max-width: 64rem;
+      padding: 3rem 2rem 6rem;
       animation: fadeIn 0.8s ease forwards;
       opacity: 0;
+    }
+
+    .hero {
+      max-width: 38rem;
     }
 
     .header {
@@ -134,67 +82,67 @@
 
     h1 {
       margin: 0;
-      font-family: 'Signifier', serif;
+      font-family: var(--font-heading);
       font-size: 1.875rem;
       line-height: 2.25rem;
       letter-spacing: -0.02em;
       font-weight: 400;
-      color: #fff;
+      color: var(--text);
     }
 
     .separator {
       width: 3rem;
       height: 1px;
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--text-10);
       margin: 1.5rem 0;
     }
 
     .role {
       font-size: 0.875rem;
       line-height: 1.25rem;
-      color: rgba(255, 255, 255, 0.6);
+      color: var(--text-60);
       margin: 0 0 1rem;
     }
 
     .role a {
-      color: #D956ff;
+      color: var(--accent);
       text-decoration: none;
       transition: color 0.2s;
     }
     .role a:hover {
-      color: #A000CC;
+      color: var(--accent-hover);
     }
 
     .description {
       font-size: 0.875rem;
       line-height: 1.625;
-      color: rgba(255, 255, 255, 0.4);
+      color: var(--text-40);
       max-width: 28rem;
       margin: 0 0 2rem;
     }
 
     .cta {
       display: inline-block;
-      font-family: 'Roobert SemiMono', monospace;
+      font-family: var(--font-mono);
       font-size: 0.75rem;
       line-height: 1rem;
       text-transform: uppercase;
-      color: #D956ff;
+      color: var(--accent);
       text-decoration: none;
       transition: color 0.2s;
       margin-bottom: 4rem;
     }
     .cta:hover {
-      color: #A000CC;
+      color: var(--accent-hover);
     }
 
     .tagline {
-      font-family: 'Signifier', serif;
+      font-family: var(--font-heading);
       font-size: 0.875rem;
       line-height: 1.625;
-      color: rgba(255, 255, 255, 0.2);
+      color: var(--text-20);
       max-width: 20rem;
-      margin: 0 0 4rem;
+      margin: 0 0 3rem;
     }
 
     .socials {
@@ -205,35 +153,191 @@
     }
 
     .socials a {
-      font-family: 'Roobert SemiMono', monospace;
+      font-family: var(--font-mono);
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.15em;
-      color: rgba(255, 255, 255, 0.3);
+      color: var(--text-30);
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: color 0.2s, border-color 0.2s;
     }
     .socials a:hover {
-      color: rgba(255, 255, 255, 0.6);
+      color: var(--text-60);
       border-color: currentColor;
     }
 
+    /* Bio */
+    .bio {
+      max-width: 38rem;
+    }
+
+    .bio h2, .recently h2 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--text-60);
+      margin: 0 0 1rem;
+    }
+
+    .bio p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--text-40);
+      margin: 0 0 1rem;
+    }
+
+    .bio p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Recently */
+    .recently {
+      margin-top: 4rem;
+    }
+
+
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 0.25rem 0 1rem;
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card {
+      min-width: 240px;
+      width: 280px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      padding: 1.5rem;
+      border: 1px solid var(--text-10);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 30px rgba(217, 86, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .card__label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .card__title {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin: 0 0 0.5rem;
+      line-height: 1.3;
+    }
+
+    .card__meta {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: var(--text-40);
+      margin: 0 0 1rem;
+      flex-grow: 1;
+    }
+
+    .card__link {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .card__link:hover {
+      color: var(--accent-hover);
+    }
+
+    .recently-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .recently-header h2 {
+      margin-bottom: 0;
+    }
+
+    .carousel-arrows {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .carousel-arrow {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      border: 1px solid var(--text-10);
+      background: transparent;
+      color: var(--text-40);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+      font-size: 0.875rem;
+      line-height: 1;
+      padding: 0;
+    }
+
+    .carousel-arrow:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
     @media (min-width: 768px) {
-      .content { padding: 0 4rem; }
+      .content { padding: 6rem 4rem 6rem; }
       .header { gap: 1.25rem; }
       .headshot { width: 3rem; height: 3rem; }
       h1 { font-size: 2.25rem; line-height: 2.5rem; }
       .separator { margin: 2rem 0; }
       .role { font-size: 1rem; line-height: 1.5rem; }
       .description { font-size: 1rem; line-height: 1.625; }
-      .cta { font-size: 0.875rem; line-height: 1.25rem; margin-bottom: 6rem; }
-      .tagline { font-size: 1rem; margin-bottom: 6rem; }
+      .cta { font-size: 0.875rem; line-height: 1.25rem; margin-bottom: 5rem; }
+      .tagline { font-size: 1rem; margin-bottom: 5rem; }
       .socials { column-gap: 2rem; }
+      .bio h2, .recently h2 { font-size: 1.5rem; }
+      .bio p { font-size: 1rem; }
+      .card { width: 300px; }
+      .carousel-arrow { width: 2.25rem; height: 2.25rem; }
     }
 
     @media (min-width: 1024px) {
-      .content { padding: 0 6rem; }
+      .content { padding: 8rem 6rem 6rem; }
       h1 { font-size: 3rem; line-height: 1; }
     }
   </style>
@@ -242,41 +346,142 @@
   <div class="page">
     <div class="glow"></div>
     <main class="content">
-      <div class="header">
-        <img src="/soham.jpg" alt="Soham Mehra" class="headshot" width="48" height="48">
-        <h1>Soham Mehra</h1>
+      <div class="hero">
+        <div class="header">
+          <img src="/soham.jpg" alt="Soham Mehra" class="headshot" width="48" height="48">
+          <h1>Soham Mehra</h1>
+        </div>
+
+        <div class="separator"></div>
+
+        <p class="role">
+          Co-Founder & CTO at
+          <a href="https://morphlabs.tech" target="_blank" rel="noopener noreferrer">Morph Labs</a>
+        </p>
+
+        <p class="description">
+          Pioneering non-invasive telekinesis.
+          Controlling robotics with your brain.
+          No surgery needed.
+        </p>
+
+        <a href="https://cal.com/soham-mehra/15min" target="_blank" rel="noopener noreferrer" class="cta">
+          Schedule a call &rarr;
+        </a>
+
+        <p class="tagline">
+          Dream Big. Work Hard.<br>
+          Be Delusional. Learn From Everyone.
+        </p>
+
+        <nav class="socials">
+          <a href="/writing/">Writing</a>
+          <a href="https://substack.com/@sohammehra" target="_blank" rel="noopener noreferrer">Substack</a>
+          <a href="https://www.linkedin.com/in/soham-mehra/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://x.com/sohammehra_" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://www.youtube.com/@Soham-Mehra" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.tiktok.com/@soham.mehra" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://instagram.com/sohammehra_" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </nav>
       </div>
 
-      <div class="separator"></div>
+      <!-- Bio -->
+      <section class="bio">
+        <div class="separator"></div>
+        <h2>About</h2>
+        <p>
+          I'm the Co-Founder and CTO of Morph Labs, where we're building non-invasive brain-computer interfaces that decode neural signals into real-time prosthetic control. Our mission is to restore motor function for amputees and people with paralysis. No surgery, no implants, no six-figure procedures. Just a wearable device and the electrical activity of your brain. We're building brain foundation models, universal models that understand the brain and its context through non-invasive methods, and we believe this is the path to making BCIs work for everyone.
+        </p>
+        <p>
+          I taught myself to code in fall 2023, dove into deep learning, and then into computational neuroscience. By the time I graduated in May 2025, I had gone from writing my first lines of Python to building real-time neural decoding systems. That self-taught path shaped how I think about the field. The most impactful neurotech should be accessible to everyone, not locked behind operating rooms and research labs.
+        </p>
+        <p>
+          I believe deeply in education and in learning out loud. The best way to push a field forward is to bring others along with you, and I try to do that through my writing, my work, and every conversation I have about the future of brain-computer interfaces.
+        </p>
+      </section>
 
-      <p class="role">
-        Co-Founder & CTO at
-        <a href="https://morphlabs.tech" target="_blank" rel="noopener noreferrer">Morph Labs</a>
-      </p>
-
-      <p class="description">
-        Pioneering non-invasive telekinesis.
-        Controlling robotics with your brain.
-        No surgery needed.
-      </p>
-
-      <a href="https://cal.com/soham-mehra/15min" target="_blank" rel="noopener noreferrer" class="cta">
-        Schedule a call &rarr;
-      </a>
-
-      <p class="tagline">
-        Dream Big. Work Hard.<br>
-        Be Delusional. Learn From Everyone.
-      </p>
-
-      <nav class="socials">
-        <a href="https://www.youtube.com/@Soham-Mehra" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://x.com/itssohammehra" target="_blank" rel="noopener noreferrer">X</a>
-        <a href="https://instagram.com/sohammehra_" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://substack.com/@sohammehra" target="_blank" rel="noopener noreferrer">Substack</a>
-        <a href="https://www.linkedin.com/in/soham-mehra/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </nav>
+      <!-- Recently -->
+      <section class="recently">
+        <div class="recently-header">
+          <h2>Recently</h2>
+          <div class="carousel-arrows">
+            <button class="carousel-arrow" id="carousel-prev" aria-label="Previous">&larr;</button>
+            <button class="carousel-arrow" id="carousel-next" aria-label="Next">&rarr;</button>
+          </div>
+        </div>
+        <div class="carousel-wrapper">
+          <div class="carousel">
+            <div class="card">
+              <span class="card__label">Writing</span>
+              <h3 class="card__title">The Story of Signal Processing</h3>
+              <p class="card__meta">March 29, 2026</p>
+              <a href="/writing/the-story-of-signal-processing.html" class="card__link">Read &rarr;</a>
+            </div>
+            <div class="card">
+              <span class="card__label">News</span>
+              <h3 class="card__title">Presenting at NeuroMONSTER</h3>
+              <p class="card__meta">International Conference on Mathematics of Neuroscience and AI, Rome, June 2026</p>
+              <a href="https://www.linkedin.com/posts/soham-mehra_braincomputerinterface-graphneuralnetworks-share-7441885599789305856-aoSc" target="_blank" rel="noopener noreferrer" class="card__link">See post &rarr;</a>
+            </div>
+            <div class="card">
+              <span class="card__label">Media</span>
+              <h3 class="card__title">Morph Labs Teaser Demo</h3>
+              <p class="card__meta">Short-form demo video</p>
+              <a href="https://www.tiktok.com/@soham.mehra/video/7580808507797015838" target="_blank" rel="noopener noreferrer" class="card__link">Watch &rarr;</a>
+            </div>
+            <div class="card">
+              <span class="card__label">Research</span>
+              <h3 class="card__title">Graph Fusion for Multimodal BCIs</h3>
+              <p class="card__meta">Preprint coming soon</p>
+            </div>
+            <!-- Press card: uncomment when coverage is published
+            <div class="card">
+              <span class="card__label">Press</span>
+              <h3 class="card__title">Title</h3>
+              <p class="card__meta">Publication, Date</p>
+              <a href="#" class="card__link">Read &rarr;</a>
+            </div>
+            -->
+          </div>
+        </div>
+      </section>
     </main>
   </div>
+
+  <script>
+  (function() {
+    var c = document.querySelector('.carousel');
+    var prev = document.getElementById('carousel-prev');
+    var next = document.getElementById('carousel-next');
+    if (!c || !prev || !next) return;
+
+    var cards = c.querySelectorAll('.card');
+    if (!cards.length) return;
+
+    function getCardWidth() {
+      return cards[0].offsetWidth + parseInt(getComputedStyle(c).gap);
+    }
+
+    function scrollToIdx(i) {
+      var w = getCardWidth();
+      c.scrollTo({ left: i * w, behavior: 'smooth' });
+    }
+
+    function getCurrentIdx() {
+      var w = getCardWidth();
+      return Math.round(c.scrollLeft / w);
+    }
+
+    prev.addEventListener('click', function() {
+      var i = getCurrentIdx();
+      scrollToIdx(i <= 0 ? cards.length - 1 : i - 1);
+    });
+
+    next.addEventListener('click', function() {
+      var i = getCurrentIdx();
+      scrollToIdx(i >= cards.length - 1 ? 0 : i + 1);
+    });
+  })();
+  </script>
 </body>
 </html>

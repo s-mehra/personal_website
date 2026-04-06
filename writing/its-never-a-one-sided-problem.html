@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>It's Never a One-Sided Problem — Soham Mehra</title>
+  <meta name="description" content="Why building in immature industries requires solving multiple technical problems at once. The hardware vs. computation debate in brain-computer interfaces.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="canonical" href="https://sohammehra.com/writing/its-never-a-one-sided-problem.html">
+
+  <meta property="og:title" content="It's Never a One-Sided Problem — Soham Mehra">
+  <meta property="og:description" content="Why building in immature industries requires solving multiple technical problems at once.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sohammehra.com/writing/its-never-a-one-sided-problem.html">
+  <meta property="og:image" content="https://sohammehra.com/soham.jpg">
+  <meta property="article:published_time" content="2026-02-09">
+  <meta property="article:author" content="https://sohammehra.com">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@sohammehra_">
+  <meta name="twitter:title" content="It's Never a One-Sided Problem — Soham Mehra">
+  <meta name="twitter:description" content="Why building in immature industries requires solving multiple technical problems at once.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "It's Never a One-Sided Problem",
+    "datePublished": "2026-02-09",
+    "author": {
+      "@type": "Person",
+      "name": "Soham Mehra",
+      "url": "https://sohammehra.com"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Soham Mehra"
+    },
+    "mainEntityOfPage": "https://sohammehra.com/writing/its-never-a-one-sided-problem.html"
+  }
+  </script>
+
+  <link rel="stylesheet" href="/shared.css">
+  <style>
+    .page {
+      position: relative;
+    }
+
+    .article-nav {
+      padding: 1.5rem 2rem;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .article-nav a {
+      color: var(--text-30);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .article-nav a:hover {
+      color: var(--text-60);
+    }
+
+    .article-nav .nav-sep {
+      color: var(--text-10);
+      margin: 0 0.5rem;
+    }
+
+    .article-content {
+      max-width: 38rem;
+      padding: 2rem 2rem 4rem;
+      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
+      animation-delay: 0.1s;
+    }
+
+    .article-content time {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-30);
+      margin-bottom: 1rem;
+    }
+
+    .article-content h1 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin: 0 0 2rem;
+      line-height: 1.2;
+    }
+
+    .article-content p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-60);
+      margin: 0 0 1.25rem;
+    }
+
+    .article-footer {
+      max-width: 38rem;
+      padding: 2rem;
+      border-top: 1px solid var(--text-10);
+    }
+
+    .article-footer a {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .article-footer a:hover {
+      color: var(--accent-hover);
+    }
+
+    @media (min-width: 768px) {
+      .article-nav { padding: 2rem 4rem; }
+      .article-content { padding: 2rem 4rem 4rem; }
+      .article-content h1 { font-size: 2.5rem; }
+      .article-footer { padding: 2rem 4rem; }
+    }
+
+    @media (min-width: 1024px) {
+      .article-nav { padding: 2rem 6rem; }
+      .article-content { padding: 2rem 6rem 4rem; }
+      .article-footer { padding: 2rem 6rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="glow"></div>
+    <nav class="article-nav">
+      <a href="/">Soham Mehra</a>
+      <span class="nav-sep">/</span>
+      <a href="/writing/">Writing</a>
+    </nav>
+    <article class="article-content">
+      <time datetime="2026-02-09">February 9, 2026</time>
+      <h1>It's Never a One-Sided Problem</h1>
+
+      <p>A few tales as old as time plague the Brain-Computer Interface (BCI) world:</p>
+
+      <p>"Invasive BCIs are the only way to get accurate information about the brain, eventually people will come around to using them" vs "Non-invasive is the path to building BCIs that people will want to use, engineering innovation will make the path feasible"</p>
+
+      <p>As someone who's building a non-invasive BCI control system I'm sure you won't have to think too hard about which camp I fall in.</p>
+
+      <p>Within each camp there's often further discourse on where innovation will come from. There's a group that advocates that data from your brain (more specifically data collected non-invasively) is noisy and no amount of computational improvements will change this. The data will only become useful if your hardware improves. On the other side there's the belief that computation alone will solve all of the noisy problems, as long as there's hardware that's standard quality.</p>
+
+      <p>Despite the polarizing stances, there seems to be an unvocalized, and perhaps subliminal, expectation that the technology that other party is advocating for will eventually get "good enough" for further advancements in your field to cause a breakthrough. Those advocating that revolution comes from computation alone seem to have an underlying assumption that signal acquisition devices will improve slowly and is therefore not worth working on, and vice versa.</p>
+
+      <p>In my mind this brings up two interesting points: A) You always need a foundation to build on, and B) Building in immature industries requires solving multiple technical problems.</p>
+
+      <p>Let me give you a non-technical example to explain what I mean.</p>
+
+      <p>Imagine a painter and his canvas. Whenever he wishes to, he picks his paintbrush and paints away with the paints he has to create the vision in his (or his customer's) mind. As you reduce the number of paints available, the painter would need to get more creative to be able to produce the same message, constructing new colors to fill the palette. However, with no paint, canvas, or paintbrush, the painter can't create. The art is made possible with the foundation of tools and paints available. A GPT would be useless without language data to learn or computers to train. However, when there's been massive jump or improvement in one sphere or another, it opens the door for another. When AlexNet hit the deep learning sphere it famously showed what was possible when you trained models on GPUs and kickstarted a massive deep learning revolution.</p>
+
+      <p>AlexNet showed what a painter could do with a canvas, brush, and a variety of paints. The limit was then the artist's expression, and computational innovation. But what happens when the artist travels to a different country, is asked to paint a sunset, and out of red, yellow, and blue needed to make the color palette, red is missing. Without foundational paints in his toolkit, his ability to express and innovate from his thoughts is limited.</p>
+
+      <p>This what we've found developing an electroencephalography based real-time control system for upper-limb prosthetics. There is a point of emphasis in being as creative as possible, allowing the artist to paint beautiful seascapes with as few paints as possible, creating computational innovation. But also ensure that the three primary colors needed for the artists color palette can be found with him no matter where in the world he goes and his hardware is reliable.</p>
+
+      <p>When technology in its practical application is still immature, sometimes it takes tackling the problem from both sides, innovating on both the hardware and the algorithms, to deliver to the customers you care so much about.</p>
+
+      <p>At the end of the day, we all want more beautiful paintings. What you have to keep in mind is that it's not always a single solution that can make the change.</p>
+    </article>
+    <footer class="article-footer">
+      <a href="/writing/">&larr; All writing</a>
+    </footer>
+  </div>
+</body>
+</html>

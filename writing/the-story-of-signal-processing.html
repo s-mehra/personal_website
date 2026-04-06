@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Story of Signal Processing — Soham Mehra</title>
+  <meta name="description" content="The challenges in modern EEG, and how non-invasive BCIs need to evolve to make EEG effective. A paradigm shift from preprocessing to raw-data-first approaches.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="canonical" href="https://sohammehra.com/writing/the-story-of-signal-processing.html">
+
+  <meta property="og:title" content="The Story of Signal Processing — Soham Mehra">
+  <meta property="og:description" content="The challenges in modern EEG, and how non-invasive BCIs need to evolve to make EEG effective.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sohammehra.com/writing/the-story-of-signal-processing.html">
+  <meta property="og:image" content="https://sohammehra.com/soham.jpg">
+  <meta property="article:published_time" content="2026-03-29">
+  <meta property="article:author" content="https://sohammehra.com">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@sohammehra_">
+  <meta name="twitter:title" content="The Story of Signal Processing — Soham Mehra">
+  <meta name="twitter:description" content="The challenges in modern EEG, and how non-invasive BCIs need to evolve to make EEG effective.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Story of Signal Processing",
+    "datePublished": "2026-03-29",
+    "author": {
+      "@type": "Person",
+      "name": "Soham Mehra",
+      "url": "https://sohammehra.com"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Soham Mehra"
+    },
+    "mainEntityOfPage": "https://sohammehra.com/writing/the-story-of-signal-processing.html"
+  }
+  </script>
+
+  <link rel="stylesheet" href="/shared.css">
+  <style>
+    .page {
+      position: relative;
+    }
+
+    .article-nav {
+      padding: 1.5rem 2rem;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .article-nav a {
+      color: var(--text-30);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .article-nav a:hover {
+      color: var(--text-60);
+    }
+
+    .article-nav .nav-sep {
+      color: var(--text-10);
+      margin: 0 0.5rem;
+    }
+
+    .article-content {
+      max-width: 38rem;
+      padding: 2rem 2rem 4rem;
+      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
+      animation-delay: 0.1s;
+    }
+
+    .article-content time {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-30);
+      margin-bottom: 1rem;
+    }
+
+    .article-content h1 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin: 0 0 2rem;
+      line-height: 1.2;
+    }
+
+    .article-content p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-60);
+      margin: 0 0 1.25rem;
+    }
+
+    .article-content hr {
+      border: none;
+      height: 1px;
+      background: var(--text-10);
+      margin: 2rem 0;
+    }
+
+    .article-footer {
+      max-width: 38rem;
+      padding: 2rem;
+      border-top: 1px solid var(--text-10);
+    }
+
+    .article-footer a {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .article-footer a:hover {
+      color: var(--accent-hover);
+    }
+
+    @media (min-width: 768px) {
+      .article-nav { padding: 2rem 4rem; }
+      .article-content { padding: 2rem 4rem 4rem; }
+      .article-content h1 { font-size: 2.5rem; }
+      .article-footer { padding: 2rem 4rem; }
+    }
+
+    @media (min-width: 1024px) {
+      .article-nav { padding: 2rem 6rem; }
+      .article-content { padding: 2rem 6rem 4rem; }
+      .article-footer { padding: 2rem 6rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="glow"></div>
+    <nav class="article-nav">
+      <a href="/">Soham Mehra</a>
+      <span class="nav-sep">/</span>
+      <a href="/writing/">Writing</a>
+    </nav>
+    <article class="article-content">
+      <time datetime="2026-03-29">March 29, 2026</time>
+      <h1>The Story of Signal Processing</h1>
+
+      <p>EEG data is noisy. Most researchers love to remind you of this when you tell them you're trying to productize real-time control systems with non-invasive methods.</p>
+
+      <p>It's been well documented that there's high variance day-to-day, and person-to-person. Then come the claims of a biological ceiling to the information you can extract from EEG data paired with exclamations about noise, artifact corruption, and nonstationarity (a term that gets thrown around more than it gets solved).</p>
+
+      <p>But problems exist to be solved, and challenges exist to be taken on.</p>
+
+      <p>Hans Berger recorded the first EEG signals in 1924. It wasn't until 60 years later that ICA (Independent Component Analysis), the most common artifact removal technique today, was invented and 10 years after that when it was first applied to EEG to help remove data contamination from eye blinks and muscle noise.</p>
+
+      <p>There have been other similar advancements such as the application of the surface laplacian to help reduce volume conduction, or the use of ASR (Artifact Subspace Reconstruction) to try and use a baseline to reconstruct data that's artifact free.</p>
+
+      <p>But each technique still has its flaws: ASR requires a clean baseline to begin with, and there's still some spatial smearing even after the surface laplacian is applied. Then the same approach is taken again, trying to create an additional statistical or algorithmic approach to remove artifacts and recreate what "ideal" lab data would look like, with the goal of mimicking what's found in invasive data.</p>
+
+      <p>It inevitably falls short, and the idea of an effective non-invasive approach is pushed further down the ladder.</p>
+
+      <p>I'm someone who's deeply invested in building non-invasive systems that scale. Why would I be doing this if the reality is so grim?</p>
+
+      <p>What's the path forward to build EEG-based control systems that drive real impact?</p>
+
+      <hr>
+
+      <p>I've written previously about the need to work on both algorithms and sensors in order to make meaningful progress. But I want to focus on the situation where you have reliable electrodes that have given you data.</p>
+
+      <p>People spend their time trying to recreate invasive data, or mimic the quality, resolution, and data behavior by trying to squeeze out as much signal to improve the SNR of the data.</p>
+
+      <p>In the long run, this will always fall short. It's analogous to trying to add jet engines to a car in order to make it fly, instead of driving and taking the road.</p>
+
+      <p>Non-invasive modalities, EEG included, are a fundamentally different form of data. It's still time-series data, but we shouldn't treat it like all characteristics carry over.</p>
+
+      <p>We need to think differently. Build with noise and variance included.</p>
+
+      <p>The first place change is needed is in data preprocessing and feature extraction. We should get rid of most of it. Barring a line / bandpass filter, all these techniques are creating situations that restrict the realm of what's learnable. While there are some known biological relationships that you can exploit, there is quite a bit that is unknown because of the limitations mentioned above. Limiting the spread of features that a model you're building has access to will inadvertently put a ceiling on performance, if your manual selection of features was not 100% correct. We should build models that train and learn from raw data as much as possible. Yes, they will take in artifacts and noise, but there might be context hidden underneath. You're allowing an algorithm to figure out which features are more important based on the data, instead of letting a human decide in advance.</p>
+
+      <p>The next avenue for change is in evaluation methods. Novel methods and algorithmic advances in the EEG space are driven by results in carefully curated test setups. Within-session or within-subject evaluation. Building for offline analysis results, instead of real-time, closed-loop performance. While the numbers look nice on paper, they don't tell you whether the model you've built will work for the BCI use case you're working towards. The metrics that need to be tested are inference pipelines that replicate offline results, and models that reduce calibration and transfer from subject to subject.</p>
+
+      <hr>
+
+      <p>The field keeps trying to sanitize EEG data into something it's not, and then evaluates success in conditions that don't reflect reality. The paradigm shift is to stop fighting the nature of the data and start building systems that are designed for the messiness of the real world from day one.</p>
+
+      <p>This perspective has been the foundation of the work we're doing at Morph Labs, and the backbone of our models that we've built.</p>
+
+      <p>Non-invasive EEG will make a successful control system, but it will come from systems built with the chaos of the everyday world in mind.</p>
+    </article>
+    <footer class="article-footer">
+      <a href="/writing/">&larr; All writing</a>
+    </footer>
+  </div>
+</body>
+</html>
