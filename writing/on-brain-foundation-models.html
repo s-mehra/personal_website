@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On Brain Foundation Models — Soham Mehra</title>
+  <meta name="description" content="What it means to have a foundation model for the brain, why scaling one modality isn't enough, and the multi-modal path forward for non-invasive neurotech.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="canonical" href="https://sohammehra.com/writing/on-brain-foundation-models.html">
+
+  <meta property="og:title" content="On Brain Foundation Models — Soham Mehra">
+  <meta property="og:description" content="What it means to have a foundation model for the brain, and what it will take to get there.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sohammehra.com/writing/on-brain-foundation-models.html">
+  <meta property="og:image" content="https://sohammehra.com/soham.jpg">
+  <meta property="article:published_time" content="2026-04-24">
+  <meta property="article:author" content="https://sohammehra.com">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@sohammehra_">
+  <meta name="twitter:title" content="On Brain Foundation Models — Soham Mehra">
+  <meta name="twitter:description" content="What it means to have a foundation model for the brain, and what it will take to get there.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "On Brain Foundation Models",
+    "datePublished": "2026-04-24",
+    "author": {
+      "@type": "Person",
+      "name": "Soham Mehra",
+      "url": "https://sohammehra.com"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Soham Mehra"
+    },
+    "mainEntityOfPage": "https://sohammehra.com/writing/on-brain-foundation-models.html"
+  }
+  </script>
+
+  <link rel="stylesheet" href="/shared.css">
+  <style>
+    .page {
+      position: relative;
+    }
+
+    .article-nav {
+      padding: 1.5rem 2rem;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .article-nav a {
+      color: var(--text-30);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .article-nav a:hover {
+      color: var(--text-60);
+    }
+
+    .article-nav .nav-sep {
+      color: var(--text-10);
+      margin: 0 0.5rem;
+    }
+
+    .article-content {
+      max-width: 38rem;
+      padding: 2rem 2rem 4rem;
+      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
+      animation-delay: 0.1s;
+    }
+
+    .article-content time {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-30);
+      margin-bottom: 1rem;
+    }
+
+    .article-content h1 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin: 0 0 2rem;
+      line-height: 1.2;
+    }
+
+    .article-content p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-60);
+      margin: 0 0 1.25rem;
+    }
+
+    .article-content hr {
+      border: none;
+      height: 1px;
+      background: var(--text-10);
+      margin: 2rem 0;
+    }
+
+    .article-footer {
+      max-width: 38rem;
+      padding: 2rem;
+      border-top: 1px solid var(--text-10);
+    }
+
+    .article-footer a {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .article-footer a:hover {
+      color: var(--accent-hover);
+    }
+
+    @media (min-width: 768px) {
+      .article-nav { padding: 2rem 4rem; }
+      .article-content { padding: 2rem 4rem 4rem; }
+      .article-content h1 { font-size: 2.5rem; }
+      .article-footer { padding: 2rem 4rem; }
+    }
+
+    @media (min-width: 1024px) {
+      .article-nav { padding: 2rem 6rem; }
+      .article-content { padding: 2rem 6rem 4rem; }
+      .article-footer { padding: 2rem 6rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="glow"></div>
+    <nav class="article-nav">
+      <a href="/">Soham Mehra</a>
+      <span class="nav-sep">/</span>
+      <a href="/writing/">Writing</a>
+    </nav>
+    <article class="article-content">
+      <time datetime="2026-04-24">April 24, 2026</time>
+      <h1>On Brain Foundation Models</h1>
+
+      <p>In the AI/ML world, language modeling has had the biggest stage, dominated by Anthropic, OpenAI, and DeepMind to the point that 'foundation model' has become a synonym with the advancements in language intelligence driving the AGI conversation in media. Yet at the same time there's an array of adjacent fields that are also working to this idea of foundation models across voice, vision, and the brain.</p>
+
+      <p>Voice and vision have made massive leaps in the last five years. But despite the news neurotech has been in recently, the term "brain foundation model" has become a label that different groups apply to different inputs, different architectures, different training objectives, and different end goals.</p>
+
+      <p>So what does it mean to have a foundation model for the brain, and what do we need to do to get there?</p>
+
+      <hr>
+
+      <p>A quick online search will give you a definition along the likes of a deep learning model that has been pre-trained on a vast amount of data and can be adapted to a variety of tasks without the need for a complete retraining. The key here is the second half. The 'vast amounts of data' help you ensure your model's pre-training can be adapted to whatever downstream task, but the goal is a single model that generalizes.</p>
+
+      <p>In that definition is an implicit claim: A model that performs well across many tasks without retraining must have learned something about the structure of its input. A language model doesn't necessarily understand English, but it has learned about how tokens relate to each other enough that it can produce semantically useful outputs, which when stitched together make sense when decoded across a wide range of tasks it was never explicitly trained for.</p>
+
+      <p>It's reasonable to carry this over to the brain as well. A brain foundation model should, after being trained on the appropriate data, be able to be used for a variety of tasks that are brain/neuro/bci related without retraining for each one. If its learned representation can do that, we have something reasonable to call an understanding of neural data.</p>
+
+      <p>The harder question is how you get there.</p>
+
+      <p>In language, the recipe was scale. Enough data and enough parameters produced models that could generalize. While we can assume this holds true for neural data, the bigger issue is that no single non-invasive recording method captures the full picture of what the brain is doing. Scaling one modality doesn't get you out of that limitation. It just makes you better at seeing the same features.</p>
+
+      <p>Which means the path to a brain foundation model is not going to be the same as the path language took.</p>
+
+      <hr>
+
+      <p>The brain foundation model space has momentum. Papers, releases, and announcements have picked up significantly in the last year, and the results in individual benchmarks have been getting better.</p>
+
+      <p>But there's a subtlety in how generalization gets measured. Most of the work being called a brain foundation model right now is built around a single modality (usually EEG), and evaluated on specific downstream tasks like motor imagery, mental arithmetic, seizure detection, or P300 responses (Oddball test). Benchmark suites like MOABB track this progress well, and the gains in EEG modeling over the last several years are real. But a model that performs well on a task after being fine-tuned for it is showing something different from a model whose core representation performs well across tasks without being adjusted for each one. The gap between those two settings, frozen backbone versus fine-tuned, tends to be larger than the headline numbers suggest.</p>
+
+      <p>It's also worth noting that the label is being applied to a fairly wide range of systems. Some are genuine attempts at building general-purpose models of neural data. Others are high-performing task-specific decoders, systems built to solve one problem well, which is a different goal. Both are useful contributions, but they aren't the same thing, and it's worth keeping the distinction clear when talking about what's being developed.</p>
+
+      <p>The constraint isn't the data or the architectures. It's that no single non-invasive method sees the full picture of what the brain is doing. Any foundation model built on one signal type inherits that limitation, no matter how well it's trained.</p>
+
+      <hr>
+
+      <p>Because of the popularity of language modeling, it's the comparison that usually gets made for foundation models. A model trained on enough text learned how words relate, and that representation turned out to generalize across almost any language task. It's tempting to assume the same recipe applies to the brain. Train on enough neural data, learn how the signals relate, and generalization should follow.</p>
+
+      <p>However, brain dynamics are driven by sensory input, by interactions between regions, by signals flowing through the limbic system and the rest of the network. What you're trying to model is a system responding to its environment and to itself, in parallel, across many spatial, spectral, and temporal scales. Language is one-dimensional and tokenized. The brain is neither.</p>
+
+      <p>Each recording system also has its own limits. EEG sees only surface cortex and suffers from spatial smearing and movement artifacts. fNIRS captures cortical hemodynamics but samples slowly. MEG has strong resolution but the machines are expensive and immobile. fMRI gives whole-brain coverage but can't do real-time decoding. Every modality has a structural blind spot, and the blind spots are all different. Each one sees a different slice of what's happening, and each one misses things the others would have caught.</p>
+
+      <p>Think of the old story of the blind men and the elephant. Each man touches a different part of the animal. One describes a snake, one describes a tree trunk, one describes a wall. Each description is accurate to what was felt, and each is incomplete as a description of the elephant.</p>
+
+      <p>A brain foundation model trained on one modality is a description of one part of the animal. A foundation model of the brain has to stitch the descriptions together.</p>
+
+      <hr>
+
+      <p>If a single modality can't see the whole brain, the ideal thing to do is train on many modalities at once.</p>
+
+      <p>The goal isn't to reconstruct any single input. It's to learn a representation of how different parts of the brain interact during a task, drawing on whatever each modality is able to measure. What that representation captures is closer to the brain's functional dynamics than to any one signal type. Not a map of connections, but a learned encoding of how regions actually behave together during a task.</p>
+
+      <p>The idea is similar to how multi-modal models work in other domains. CLIP and ImageBind project different inputs into a shared latent space where the geometry encodes relationships between them. But an image and its caption carry the same semantic content. For the non-invasive brain recordings, different modalities measure different physical features, at different timescales. What we're trying to model isn't a semantic space, but a neural state that each recording method samples a different slice of.</p>
+
+      <p>The harder issue is inference. A model trained on every modality can't be deployed that way. Nobody is going to go in an MRI scanner, strap on a MEG helmet, apply an EEG cap, and attach fNIRS optodes every time they want to use a BCI. Multi-modal training has to produce a model that can run on one or a few modalities at inference time, and infer from what it has, what it would have seen with more.</p>
+
+      <p>That isn't a claim that single-modality inference is as good as multi-modal inference. It won't be. A model with access to only EEG at inference can only do so much with what EEG measures. The bet is that a model trained to map many modalities into a shared representation will do better at that inference than a model trained only on EEG, because it learned what EEG's measurements relate to across the rest of the signal space.</p>
+
+      <p>None of this is hypothetical in its pieces. EEG and fNIRS fusion already outperforms either modality on some tasks. The most realistic path is to start working with a few modalities first, and add more modalities later.</p>
+
+      <hr>
+
+      <p>The biggest constraint is the data bottleneck. Invasive recordings might make progress with less architectural work, but the deployment surface is small and will stay that way. Non-invasive reaches anyone who can wear a cap or sit in a scanner. That's the population the field exists to serve, and it's why multi-modality is load-bearing for non-invasive in a way it isn't for invasive work.</p>
+
+      <p>Training a model on paired recordings across fMRI, MEG, EEG, and fNIRS at the scale a foundation model needs doesn't have a dataset behind it. The recordings are hard to collect in pairs for practical reasons: MEG and fMRI can't be done simultaneously, simultaneous EEG and fMRI is possible but expensive and environmentally constrained, and collecting all four from the same subjects performing the same tasks at the scale of thousands of hours is closer to a research program than a data engineering problem. The dataset that would make the full version of this work isn't sitting on a server somewhere waiting to be cleaned up. It has to be built.</p>
+
+      <p>That doesn't mean there's nothing to work towards. Pairs before quadruples is a reasonable starting point. EEG and fNIRS can be recorded simultaneously and relatively cheaply, and the fused results already outperform either modality alone. Task structure can be used to align recordings that weren't collected simultaneously, as long as the tasks are matched carefully. None of these get the full picture on their own, but each one moves the field further along than where it is now.</p>
+
+      <p>Subject variability is a related problem and a separate one. The real shape of it is an invariance problem. Language transfers across speakers because sequence models can factor out what varies (accent, voice) from what doesn't. Neural data doesn't transfer the same way because the field doesn't yet know what the right invariances are, what needs to be held fixed across subjects and what to treat as signal. The assumption that scale will surface these invariances is probably the wrong bet for neural data. Accent and voice are variables on a shared linguistic process. Subject variation in neural data is a change in the signal-generation mapping itself, and scale doesn't factor those out the same way. Volume helps, as Meta's neural wristband work shows, but the harder version of the problem is architectural.</p>
+
+      <hr>
+
+      <p>A non-invasive brain foundation model, built properly, is a model trained across modalities to learn a representation of the brain's functional dynamics, and deployed on whatever modalities are practically available at inference. That's the version of the label that would actually justify the name.</p>
+
+      <p>Getting there means working on a specific set of problems. Paired multi-modal datasets at useful scale. Architectures that can align modalities with incompatible timescales and measurement physics. Benchmarks that measure the quality of a learned representation, not just performance on individual tasks. Transfer and domain adaptation across subjects. None of these are new problems, but they become central the moment you take the foundation model label seriously. The harder version underneath them is figuring out what invariances the representation should respect, and how to learn them from data that's structurally incomplete in different ways across modalities. That's the actual research question.</p>
+
+      <p>Non-invasive brain foundation models are the right target for the field. The value of getting them right, for rehabilitation, for interfaces, for understanding the brain itself, and for making that accessible, is too high to accept a ceiling that comes from treating one recording method as the whole picture.</p>
+    </article>
+    <footer class="article-footer">
+      <a href="/writing/">&larr; All writing</a>
+    </footer>
+  </div>
+</body>
+</html>
