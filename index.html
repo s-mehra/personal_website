@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soham Mehra — Co-Founder & CTO, Morph Labs</title>
-  <meta name="description" content="Co-Founder & CTO at Morph Labs, building non-invasive brain-computer interfaces for prosthetics. Neurotech, EEG, AI/ML.">
+  <meta name="description" content="Co-Founder & CTO at Morph Labs, building non-invasive brain-computer interfaces for prosthetics. Geometry and symmetry in neural data, brain foundation models, EEG.">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="canonical" href="https://sohammehra.com/">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Soham Mehra — Co-Founder & CTO, Morph Labs">
-  <meta property="og:description" content="Co-Founder & CTO at Morph Labs, building non-invasive brain-computer interfaces for prosthetics. Neurotech, EEG, AI/ML.">
+  <meta property="og:description" content="Co-Founder & CTO at Morph Labs, building non-invasive brain-computer interfaces for prosthetics. Geometry and symmetry in neural data, brain foundation models, EEG.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sohammehra.com/">
   <meta property="og:image" content="https://sohammehra.com/soham.jpg">
@@ -19,7 +19,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@sohammehra_">
   <meta name="twitter:title" content="Soham Mehra — Co-Founder & CTO, Morph Labs">
-  <meta name="twitter:description" content="Co-Founder & CTO at Morph Labs, building non-invasive brain-computer interfaces for prosthetics. Neurotech, EEG, AI/ML.">
+  <meta name="twitter:description" content="Co-Founder & CTO at Morph Labs, building non-invasive brain-computer interfaces for prosthetics. Geometry and symmetry in neural data, brain foundation models, EEG.">
   <meta name="twitter:image" content="https://sohammehra.com/soham.jpg">
 
   <!-- Structured Data -->
@@ -35,12 +35,13 @@
       "url": "https://morphlabs.tech"
     },
     "url": "https://sohammehra.com",
-    "knowsAbout": ["Brain-Computer Interfaces", "EEG", "Deep Learning", "Computational Neuroscience", "Prosthetics", "Brain Foundation Models"],
+    "knowsAbout": ["Brain-Computer Interfaces", "EEG", "Deep Learning", "Computational Neuroscience", "Prosthetics", "Brain Foundation Models", "Geometric Deep Learning", "Symmetry in Neural Data", "Interpretability"],
     "sameAs": [
       "https://www.youtube.com/@Soham-Mehra",
       "https://x.com/sohammehra_",
       "https://instagram.com/sohammehra_",
       "https://substack.com/@sohammehra",
+      "https://ratelimitingstep.substack.com",
       "https://www.linkedin.com/in/soham-mehra/",
       "https://www.tiktok.com/@soham.mehra"
     ]
@@ -190,6 +191,17 @@
 
     .bio p:last-child {
       margin-bottom: 0;
+    }
+
+    .bio a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .bio a:hover {
+      color: var(--accent-hover);
+      border-color: currentColor;
     }
 
     /* Recently */
@@ -376,7 +388,7 @@
 
         <nav class="socials">
           <a href="/writing/">Writing</a>
-          <a href="https://substack.com/@sohammehra" target="_blank" rel="noopener noreferrer">Substack</a>
+          <a href="https://ratelimitingstep.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>
           <a href="https://www.linkedin.com/in/soham-mehra/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://x.com/sohammehra_" target="_blank" rel="noopener noreferrer">X</a>
           <a href="https://www.youtube.com/@Soham-Mehra" target="_blank" rel="noopener noreferrer">YouTube</a>
@@ -390,13 +402,19 @@
         <div class="separator"></div>
         <h2>About</h2>
         <p>
-          I'm the Co-Founder and CTO of Morph Labs, where I build the AI that decodes non-invasive brain signals into real-time motor control. The field has spent decades trying to preprocess EEG into something it's not. We took a different approach. Train on the noise, not against it. I'm working towards brain foundation models: universal representations of neural dynamics. Many modalities, all of the understanding, and none of the surgeries. That's the long game.
+          I build the models that decode non-invasive brain signals into real-time motor control at <a href="https://morphlabs.tech" target="_blank" rel="noopener noreferrer">Morph Labs</a>.
         </p>
         <p>
-          I taught myself to code in fall 2023, dove into deep learning, and then into computational neuroscience. By the time I graduated in May 2025, I had gone from writing my first lines of Python to building real-time neural decoding systems. That self-taught path shaped how I think about the field. The most impactful neurotech should be accessible to everyone, not locked behind operating rooms and research labs.
+          We train on EEG as-is rather than preprocessing it clean. Lately most of my time goes to the geometries and symmetries in neural data, mostly for data efficiency and interpretability.
         </p>
         <p>
-          I believe deeply in education and in learning out loud. The best way to push a field forward is to bring others along with you, and I try to do that through my writing, my work, and every conversation I have about the future of brain-computer interfaces.
+          Some things I keep coming back to: <a href="/writing/on-brain-foundation-models.html">on brain foundation models</a>, <a href="/writing/the-story-of-signal-processing.html">the story of signal processing</a>, and <a href="/writing/its-never-a-one-sided-problem.html">it's never a one-sided problem</a>.
+        </p>
+        <p>
+          I write at <a href="https://ratelimitingstep.substack.com" target="_blank" rel="noopener noreferrer">The Rate-Limiting Step</a>, on neuroscience, systems, and where the limits actually are.
+        </p>
+        <p>
+          I taught myself to code in the fall of 2023 and graduated in May 2025.
         </p>
       </section>
 
