@@ -7,6 +7,8 @@
   <meta name="description" content="Co-Founder & CTO at Morph Labs, building non-invasive brain-computer interfaces for prosthetics. Geometry and symmetry in neural data, brain foundation models, EEG.">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="canonical" href="https://sohammehra.com/">
+  <link rel="preload" href="/fonts/signifier/Signifier-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/roobert/Roobert-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Open Graph -->
   <meta property="og:title" content="Soham Mehra — Co-Founder & CTO, Morph Labs">
@@ -58,7 +60,7 @@
       width: 100%;
       max-width: 64rem;
       padding: 3rem 2rem 6rem;
-      animation: fadeIn 0.8s ease forwards;
+      animation: fadeIn 0.2s ease forwards;
       opacity: 0;
     }
 
@@ -115,9 +117,9 @@
     }
 
     .description {
-      font-size: 0.875rem;
+      font-size: 1rem;
       line-height: 1.625;
-      color: var(--text-40);
+      color: var(--text-60);
       max-width: 28rem;
       margin: 0 0 2rem;
     }
@@ -136,27 +138,35 @@
     .cta:hover {
       color: var(--accent-hover);
     }
+    .cta:active {
+      color: var(--text);
+      transition-duration: 0s;
+    }
 
     .socials {
       display: flex;
       flex-wrap: wrap;
-      column-gap: 1.5rem;
-      row-gap: 0.5rem;
+      column-gap: 1.25rem;
+      margin: -0.625rem -0.25rem;
     }
 
     .socials a {
+      display: inline-block;
+      padding: 0.625rem 0.25rem;
       font-family: var(--font-mono);
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.15em;
-      color: var(--text-30);
+      color: var(--text-60);
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
+      transition: color 0.2s;
     }
     .socials a:hover {
-      color: var(--text-60);
-      border-color: currentColor;
+      color: var(--text);
+    }
+    .socials a:active {
+      color: var(--accent);
+      transition-duration: 0s;
     }
 
     /* Bio */
@@ -168,15 +178,15 @@
       font-family: var(--font-heading);
       font-size: 1.25rem;
       font-weight: 400;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       color: var(--text-60);
       margin: 0 0 1rem;
     }
 
     .bio p {
-      font-size: 0.875rem;
+      font-size: 1rem;
       line-height: 1.75;
-      color: var(--text-40);
+      color: var(--text-60);
       margin: 0 0 1rem;
     }
 
@@ -222,6 +232,7 @@
     }
 
     .card {
+      position: relative;
       min-width: 240px;
       width: 280px;
       flex-shrink: 0;
@@ -235,10 +246,16 @@
       flex-direction: column;
     }
 
-    .card:hover {
+    /* Only cards that actually link somewhere get the interactive treatment */
+    .card:has(.card__link):hover {
       border-color: var(--accent);
       box-shadow: 0 0 30px rgba(217, 86, 255, 0.08);
       transform: translateY(-2px);
+    }
+
+    .card:has(.card__link):active {
+      transform: translateY(0) scale(0.99);
+      transition-duration: 0s;
     }
 
     .card__label {
@@ -255,7 +272,7 @@
       font-family: var(--font-heading);
       font-size: 1.125rem;
       font-weight: 400;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       color: var(--text);
       margin: 0 0 0.5rem;
       line-height: 1.3;
@@ -264,7 +281,7 @@
     .card__meta {
       font-size: 0.8125rem;
       line-height: 1.5;
-      color: var(--text-40);
+      color: var(--text-60);
       margin: 0 0 1rem;
       flex-grow: 1;
     }
@@ -280,8 +297,17 @@
       transition: color 0.2s;
     }
 
-    .card__link:hover {
+    .card__link:hover,
+    .card:hover .card__link {
       color: var(--accent-hover);
+    }
+
+    /* Stretch the link over the whole card */
+    .card__link::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
     }
 
     .recently-header {
@@ -301,12 +327,12 @@
     }
 
     .carousel-arrow {
-      width: 2rem;
-      height: 2rem;
+      width: 2.5rem;
+      height: 2.5rem;
       border-radius: 50%;
       border: 1px solid var(--text-10);
       background: transparent;
-      color: var(--text-40);
+      color: var(--text-60);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -317,9 +343,18 @@
       padding: 0;
     }
 
-    .carousel-arrow:hover {
+    .carousel-arrow:hover:not(:disabled) {
       border-color: var(--accent);
       color: var(--accent);
+    }
+
+    .carousel-arrow:active:not(:disabled) {
+      transform: scale(0.92);
+    }
+
+    .carousel-arrow:disabled {
+      opacity: 0.35;
+      cursor: default;
     }
 
     @media (min-width: 768px) {
@@ -329,13 +364,10 @@
       h1 { font-size: 2.25rem; line-height: 2.5rem; }
       .separator { margin: 2rem 0; }
       .role { font-size: 1rem; line-height: 1.5rem; }
-      .description { font-size: 1rem; line-height: 1.625; }
       .cta { font-size: 0.875rem; line-height: 1.25rem; margin-bottom: 5rem; }
-      .socials { column-gap: 2rem; }
+      .socials { column-gap: 1.75rem; }
       .bio h2, .recently h2 { font-size: 1.5rem; }
-      .bio p { font-size: 1rem; }
       .card { width: 300px; }
-      .carousel-arrow { width: 2.25rem; height: 2.25rem; }
     }
 
     @media (min-width: 1024px) {
@@ -461,29 +493,50 @@
     var cards = c.querySelectorAll('.card');
     if (!cards.length) return;
 
+    // Logical target index survives mid-flight clicks: rapid presses accumulate
+    // instead of re-reading a half-scrolled position.
+    var target = null;
+    var settleTimer;
+
     function getCardWidth() {
       return cards[0].offsetWidth + parseInt(getComputedStyle(c).gap);
     }
 
-    function scrollToIdx(i) {
-      var w = getCardWidth();
-      c.scrollTo({ left: i * w, behavior: 'smooth' });
+    function maxIdx() {
+      var maxLeft = c.scrollWidth - c.clientWidth;
+      return Math.min(cards.length - 1, Math.round(maxLeft / getCardWidth()));
     }
 
     function getCurrentIdx() {
-      var w = getCardWidth();
-      return Math.round(c.scrollLeft / w);
+      return Math.round(c.scrollLeft / getCardWidth());
     }
 
-    prev.addEventListener('click', function() {
-      var i = getCurrentIdx();
-      scrollToIdx(i <= 0 ? cards.length - 1 : i - 1);
-    });
+    function updateArrows() {
+      var i = target !== null ? target : getCurrentIdx();
+      prev.disabled = i <= 0;
+      next.disabled = i >= maxIdx();
+    }
 
-    next.addEventListener('click', function() {
-      var i = getCurrentIdx();
-      scrollToIdx(i >= cards.length - 1 ? 0 : i + 1);
-    });
+    function step(dir) {
+      var i = target !== null ? target : getCurrentIdx();
+      target = Math.max(0, Math.min(maxIdx(), i + dir));
+      c.scrollTo({ left: target * getCardWidth(), behavior: 'smooth' });
+      updateArrows();
+    }
+
+    prev.addEventListener('click', function() { step(-1); });
+    next.addEventListener('click', function() { step(1); });
+
+    c.addEventListener('scroll', function() {
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(function() {
+        target = null;
+        updateArrows();
+      }, 100);
+    }, { passive: true });
+
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
   })();
   </script>
 </body>
